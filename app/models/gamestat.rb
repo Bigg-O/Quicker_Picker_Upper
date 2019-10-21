@@ -1,0 +1,2 @@
+class Gamestat < ApplicationRecord
+end

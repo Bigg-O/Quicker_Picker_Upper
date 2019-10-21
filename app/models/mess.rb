@@ -1,0 +1,2 @@
+class Mess < ApplicationRecord
+end
