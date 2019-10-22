@@ -1365,3 +1365,623 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 2666)
 
 
+Started GET "/login" for ::1 at 2019-10-22 15:54:10 -0500
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 10.7ms | Allocations: 2506)
+Completed 200 OK in 39ms (Views: 17.5ms | ActiveRecord: 0.7ms | Allocations: 9971)
+
+
+Started GET "/login" for ::1 at 2019-10-22 15:54:57 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 14.8ms | Allocations: 5754)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms | Allocations: 7685)
+
+
+Started GET "/login" for ::1 at 2019-10-22 15:55:04 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 1.2ms | Allocations: 1074)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1833)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check Login
+<%= form_with model:@user, url:"/login" method:"post" do |f|%>
+    <%= f.label :user_name%>
+    <%= f.text_field :user_name%><br>
+    <%= f.label :password%>
+    <%= f.password_field  :password%><br>
+    <%= f.submit"Login" %>
+<% end %>
+):
+1:    Login
+2:    <%= form_with model:@user, url:"/login" method:"post" do |f|%>
+3:        <%= f.label :user_name%>
+4:        <%= f.text_field :user_name%><br>
+5:        <%= f.label :password%>
+6:        <%= f.password_field  :password%><br>
+7:        <%= f.submit"Login" %>
+8:    <% end %>
+  
+app/views/sessions/new.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting end
+app/views/sessions/new.html.erb:2: syntax error, unexpected do, expecting end
+app/views/sessions/new.html.erb:10: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/new.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting end
+app/views/sessions/new.html.erb:2: syntax error, unexpected do, expecting end
+app/views/sessions/new.html.erb:10: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/new.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting end
+app/views/sessions/new.html.erb:2: syntax error, unexpected do, expecting end
+app/views/sessions/new.html.erb:10: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/new.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting end
+app/views/sessions/new.html.erb:2: syntax error, unexpected do, expecting end
+app/views/sessions/new.html.erb:10: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/new.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting end
+app/views/sessions/new.html.erb:2: syntax error, unexpected do, expecting end
+app/views/sessions/new.html.erb:10: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/new.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting end
+app/views/sessions/new.html.erb:2: syntax error, unexpected do, expecting end
+app/views/sessions/new.html.erb:10: syntax error, unexpected end, expecting end-of-input
+Started GET "/login" for ::1 at 2019-10-22 15:55:16 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 3.2ms | Allocations: 752)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 2734)
+
+
+Started POST "/login" for ::1 at 2019-10-22 15:55:39 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"GS2bCBCNuLkmtKOf/NsRLv9a/VKSH2qQKyhxvOFTjZQQfj9NjtoOOZLSrOE6hwue007bKnAmZUOljiyU+Ds2bw==", "user"=>{"user_name"=>"sdf", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms | Allocations: 3324)
+
+
+  
+NoMethodError (undefined method `find_by_username' for #<Class:0x00007fdfcc06c508>
+Did you mean?  find_by_sql):
+  
+app/controllers/sessions_controller.rb:7:in `create'
+Started POST "/login" for ::1 at 2019-10-22 15:57:52 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"GS2bCBCNuLkmtKOf/NsRLv9a/VKSH2qQKyhxvOFTjZQQfj9NjtoOOZLSrOE6hwue007bKnAmZUOljiyU+Ds2bw==", "user"=>{"user_name"=>"asd", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+[31mUnpermitted parameter: :user_name[0m
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 2356)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:7:in `create'
+Started POST "/login" for ::1 at 2019-10-22 15:58:58 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"GS2bCBCNuLkmtKOf/NsRLv9a/VKSH2qQKyhxvOFTjZQQfj9NjtoOOZLSrOE6hwue007bKnAmZUOljiyU+Ds2bw==", "user"=>{"user_name"=>"asd", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+[31mUnpermitted parameter: :user_name[0m
+[31mUnpermitted parameter: :user_name[0m
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2391)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:8:in `create'
+Started POST "/login" for ::1 at 2019-10-22 15:59:37 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"GS2bCBCNuLkmtKOf/NsRLv9a/VKSH2qQKyhxvOFTjZQQfj9NjtoOOZLSrOE6hwue007bKnAmZUOljiyU+Ds2bw==", "user"=>{"user_name"=>"asd", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 2340)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:8:in `create'
+Started POST "/login" for ::1 at 2019-10-22 16:00:43 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"GS2bCBCNuLkmtKOf/NsRLv9a/VKSH2qQKyhxvOFTjZQQfj9NjtoOOZLSrOE6hwue007bKnAmZUOljiyU+Ds2bw==", "user"=>{"user_name"=>"asd", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1402)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:8:in `create'
+Started POST "/login" for ::1 at 2019-10-22 16:01:09 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"GS2bCBCNuLkmtKOf/NsRLv9a/VKSH2qQKyhxvOFTjZQQfj9NjtoOOZLSrOE6hwue007bKnAmZUOljiyU+Ds2bw==", "user"=>{"user_name"=>"asd", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2337)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:8:in `create'
+Started POST "/login" for ::1 at 2019-10-22 16:01:52 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"GS2bCBCNuLkmtKOf/NsRLv9a/VKSH2qQKyhxvOFTjZQQfj9NjtoOOZLSrOE6hwue007bKnAmZUOljiyU+Ds2bw==", "user"=>{"user_name"=>"asd", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1399)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:8:in `create'
+Started POST "/login" for ::1 at 2019-10-22 16:02:07 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"GS2bCBCNuLkmtKOf/NsRLv9a/VKSH2qQKyhxvOFTjZQQfj9NjtoOOZLSrOE6hwue007bKnAmZUOljiyU+Ds2bw==", "user"=>{"user_name"=>"asd", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2337)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:8:in `create'
+Started POST "/login" for ::1 at 2019-10-22 16:03:19 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"GS2bCBCNuLkmtKOf/NsRLv9a/VKSH2qQKyhxvOFTjZQQfj9NjtoOOZLSrOE6hwue007bKnAmZUOljiyU+Ds2bw==", "user"=>{"user_name"=>"asd", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2332)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:8:in `create'
+Started POST "/login" for ::1 at 2019-10-22 16:03:56 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"GS2bCBCNuLkmtKOf/NsRLv9a/VKSH2qQKyhxvOFTjZQQfj9NjtoOOZLSrOE6hwue007bKnAmZUOljiyU+Ds2bw==", "user"=>{"user_name"=>"asd", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "asd"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 1.5ms | Allocations: 1877)
+Completed 200 OK in 20ms (Views: 2.8ms | ActiveRecord: 0.9ms | Allocations: 5367)
+
+
+Started POST "/login" for ::1 at 2019-10-22 16:04:24 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"/i3tU9akC0Nt7Fxr6Cyd31dbMCglbLp5CCo/BgSwfED3fkkWSPO9w9mKUxUucIdve08WUMdVtaqGjGIuHdjHuw==", "user_name"=>"timmy", "password"=>"[FILTERED]", "commit"=>"Login"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 945)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/sessions_controller.rb:28:in `user_params'
+app/controllers/sessions_controller.rb:7:in `create'
+Started GET "/login" for ::1 at 2019-10-22 16:06:30 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 1.1ms | Allocations: 588)
+Completed 200 OK in 9ms (Views: 1.7ms | ActiveRecord: 0.5ms | Allocations: 5784)
+
+
+Started POST "/login" for ::1 at 2019-10-22 16:06:38 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"tWNr6j30icFkbk/DNF2OmbeNm84O2wwHhcpPpSEhp8O8MM+vo6M/QdAIQL3yAZQpm5m9tuziA9QLbBKNOEkcOA==", "user"=>{"user_name"=>"timmy", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "timmy"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/users?notice=Logged+in%21
+Completed 302 Found in 228ms (ActiveRecord: 0.7ms | Allocations: 1585)
+
+
+Started GET "/users?notice=Logged+in%21" for ::1 at 2019-10-22 16:06:38 -0500
+Processing by UsersController#index as HTML
+  Parameters: {"notice"=>"Logged in!"}
+  Rendering users/index.html.erb
+  Rendered users/index.html.erb (Duration: 0.8ms | Allocations: 204)
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 1544)
+
+
+Started GET "/statistics" for ::1 at 2019-10-22 16:16:51 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [GET] "/statistics"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/4/statistics" for ::1 at 2019-10-22 16:17:16 -0500
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+activesupport (6.0.0) lib/active_support/inflector/methods.rb:282:in `const_get'
+activesupport (6.0.0) lib/active_support/inflector/methods.rb:282:in `block in constantize'
+activesupport (6.0.0) lib/active_support/inflector/methods.rb:280:in `each'
+activesupport (6.0.0) lib/active_support/inflector/methods.rb:280:in `inject'
+activesupport (6.0.0) lib/active_support/inflector/methods.rb:280:in `constantize'
+activesupport (6.0.0) lib/active_support/dependencies/zeitwerk_integration.rb:19:in `constantize'
+actionpack (6.0.0) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (6.0.0) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:45:in `controller'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (6.0.0) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.0) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.0) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/4/statistics" for ::1 at 2019-10-22 16:18:17 -0500
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#statistics as HTML
+  Parameters: {"id"=>"4"}
+  Rendering users/statistics.html.erb
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered users/statistics.html.erb (Duration: 17.4ms | Allocations: 5957)
+Completed 200 OK in 33ms (Views: 24.9ms | ActiveRecord: 0.9ms | Allocations: 8681)
+
+
+Started GET "/users/4/statistics" for ::1 at 2019-10-22 16:18:39 -0500
+Processing by UsersController#statistics as HTML
+  Parameters: {"id"=>"4"}
+  Rendering users/statistics.html.erb
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered sessions/_logout.html.erb (Duration: 18.7ms | Allocations: 5934)
+  Rendered users/statistics.html.erb (Duration: 21.6ms | Allocations: 6807)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.4ms | Allocations: 8720)
+
+
+Started GET "/users/4/statistics" for ::1 at 2019-10-22 16:18:43 -0500
+Processing by UsersController#statistics as HTML
+  Parameters: {"id"=>"4"}
+  Rendering users/statistics.html.erb
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered sessions/_logout.html.erb (Duration: 2.5ms | Allocations: 1151)
+  Rendered users/statistics.html.erb (Duration: 4.2ms | Allocations: 1770)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms | Allocations: 2512)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= form_with (url: "/logout", method: "post") do %>
+    <%= submit_tag "logout" %>
+<% end %>
+):
+1:    <%= form_with (url: "/logout", method: "post") do %>
+2:        <%= submit_tag "logout" %>
+3:    <% end %>
+  
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ',', expecting end
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ')', expecting end
+app/views/sessions/_logout.html.erb:5: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ',', expecting end
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ')', expecting end
+app/views/sessions/_logout.html.erb:5: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ',', expecting end
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ')', expecting end
+app/views/sessions/_logout.html.erb:5: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ',', expecting end
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ')', expecting end
+app/views/sessions/_logout.html.erb:5: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ',', expecting end
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ')', expecting end
+app/views/sessions/_logout.html.erb:5: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ',', expecting end
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ')', expecting end
+app/views/sessions/_logout.html.erb:5: syntax error, unexpected end, expecting end-of-input
+app/views/users/statistics.html.erb:3
+Started GET "/users/4/statistics" for ::1 at 2019-10-22 16:20:32 -0500
+Processing by UsersController#statistics as HTML
+  Parameters: {"id"=>"4"}
+  Rendering users/statistics.html.erb
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered sessions/_logout.html.erb (Duration: 1.1ms | Allocations: 1164)
+  Rendered users/statistics.html.erb (Duration: 4.0ms | Allocations: 2056)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms | Allocations: 3987)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= form_with (url:"/logout", method:"post") do %>
+    <%= submit_tag "logout" %>
+<% end %>
+):
+1:    <%= form_with (url:"/logout", method:"post") do %>
+2:        <%= submit_tag "logout" %>
+3:    <% end %>
+  
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ',', expecting end
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ')', expecting end
+app/views/sessions/_logout.html.erb:5: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ',', expecting end
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ')', expecting end
+app/views/sessions/_logout.html.erb:5: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ',', expecting end
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ')', expecting end
+app/views/sessions/_logout.html.erb:5: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ',', expecting end
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ')', expecting end
+app/views/sessions/_logout.html.erb:5: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ',', expecting end
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ')', expecting end
+app/views/sessions/_logout.html.erb:5: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ',', expecting end
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ')', expecting end
+app/views/sessions/_logout.html.erb:5: syntax error, unexpected end, expecting end-of-input
+app/views/users/statistics.html.erb:3
+Started GET "/users/4/statistics" for ::1 at 2019-10-22 16:22:36 -0500
+Processing by UsersController#statistics as HTML
+  Parameters: {"id"=>"4"}
+  Rendering users/statistics.html.erb
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered sessions/_logout.html.erb (Duration: 1.8ms | Allocations: 1164)
+  Rendered users/statistics.html.erb (Duration: 5.7ms | Allocations: 2016)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.2ms | Allocations: 3930)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= form_with (url: "/logout", method: "post" ) do %>
+    <%= submit_tag("logout") %>
+<% end %>
+):
+1:    <%= form_with (url: "/logout", method: "post" ) do %>
+2:        <%= submit_tag("logout") %>
+3:    <% end %>
+  
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ',', expecting end
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ')', expecting end
+app/views/sessions/_logout.html.erb:5: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ',', expecting end
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ')', expecting end
+app/views/sessions/_logout.html.erb:5: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ',', expecting end
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ')', expecting end
+app/views/sessions/_logout.html.erb:5: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ',', expecting end
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ')', expecting end
+app/views/sessions/_logout.html.erb:5: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ',', expecting end
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ')', expecting end
+app/views/sessions/_logout.html.erb:5: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ',', expecting end
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ')', expecting end
+app/views/sessions/_logout.html.erb:5: syntax error, unexpected end, expecting end-of-input
+app/views/users/statistics.html.erb:3
+Started GET "/login" for ::1 at 2019-10-22 16:24:09 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/_logout.html.erb (Duration: 1.6ms | Allocations: 1125)
+  Rendered sessions/new.html.erb (Duration: 12.6ms | Allocations: 3734)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms | Allocations: 5677)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= form_with (url: "/logout", method: "post" ) do %>
+    <%= submit_tag("logout") %>
+<% end %>
+):
+1:    <%= form_with (url: "/logout", method: "post" ) do %>
+2:        <%= submit_tag("logout") %>
+3:    <% end %>
+  
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ',', expecting end
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ')', expecting end
+app/views/sessions/_logout.html.erb:5: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ',', expecting end
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ')', expecting end
+app/views/sessions/_logout.html.erb:5: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ',', expecting end
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ')', expecting end
+app/views/sessions/_logout.html.erb:5: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ',', expecting end
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ')', expecting end
+app/views/sessions/_logout.html.erb:5: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ',', expecting end
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ')', expecting end
+app/views/sessions/_logout.html.erb:5: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ',', expecting end
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ')', expecting end
+app/views/sessions/_logout.html.erb:5: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/new.html.erb:10
+Started GET "/login" for ::1 at 2019-10-22 16:29:50 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/_logout.html.erb (Duration: 1.4ms | Allocations: 1151)
+  Rendered sessions/new.html.erb (Duration: 2.4ms | Allocations: 1742)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2498)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= form_with (url: "/logout", method: "post" ) do %>
+    <%= submit_tag("logout") %>
+<% end %>
+):
+1:    <%= form_with (url: "/logout", method: "post" ) do %>
+2:        <%= submit_tag("logout") %>
+3:    <% end %>
+  
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ',', expecting end
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ')', expecting end
+app/views/sessions/_logout.html.erb:5: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ',', expecting end
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ')', expecting end
+app/views/sessions/_logout.html.erb:5: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ',', expecting end
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ')', expecting end
+app/views/sessions/_logout.html.erb:5: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ',', expecting end
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ')', expecting end
+app/views/sessions/_logout.html.erb:5: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ',', expecting end
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ')', expecting end
+app/views/sessions/_logout.html.erb:5: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ',', expecting end
+app/views/sessions/_logout.html.erb:1: syntax error, unexpected ')', expecting end
+app/views/sessions/_logout.html.erb:5: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/new.html.erb:10
+Started GET "/login" for ::1 at 2019-10-22 16:29:59 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 2.0ms | Allocations: 1142)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 3072)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check Login
+<%= form_with model:@user, url:"/login", method:"post" do |f|%>
+    <%= f.label :user_name%>
+    <%= f.text_field :user_name%><br>
+    <%= f.label :password%>
+    <%= f.password_field  :password%><br>
+    <%= f.submit"Login" %>
+<% end %>
+
+<%= form_with (url: "/logout", method: "post" ) do %>
+    <%= submit_tag("logout") %>
+<% end %>
+):
+1:    Login
+2:    <%= form_with model:@user, url:"/login", method:"post" do |f|%>
+3:        <%= f.label :user_name%>
+4:        <%= f.text_field :user_name%><br>
+5:        <%= f.label :password%>
+6:        <%= f.password_field  :password%><br>
+7:        <%= f.submit"Login" %>
+8:    <% end %>
+9:    
+10:    <%= form_with (url: "/logout", method: "post" ) do %>
+11:        <%= submit_tag("logout") %>
+12:    <% end %>
+  
+app/views/sessions/new.html.erb:10: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/new.html.erb:10: syntax error, unexpected ',', expecting end
+app/views/sessions/new.html.erb:10: syntax error, unexpected ')', expecting end
+app/views/sessions/new.html.erb:14: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/new.html.erb:10: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/new.html.erb:10: syntax error, unexpected ',', expecting end
+app/views/sessions/new.html.erb:10: syntax error, unexpected ')', expecting end
+app/views/sessions/new.html.erb:14: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/new.html.erb:10: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/new.html.erb:10: syntax error, unexpected ',', expecting end
+app/views/sessions/new.html.erb:10: syntax error, unexpected ')', expecting end
+app/views/sessions/new.html.erb:14: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/new.html.erb:10: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/new.html.erb:10: syntax error, unexpected ',', expecting end
+app/views/sessions/new.html.erb:10: syntax error, unexpected ')', expecting end
+app/views/sessions/new.html.erb:14: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/new.html.erb:10: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/new.html.erb:10: syntax error, unexpected ',', expecting end
+app/views/sessions/new.html.erb:10: syntax error, unexpected ')', expecting end
+app/views/sessions/new.html.erb:14: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/new.html.erb:10: syntax error, unexpected tLABEL, expecting ')'
+app/views/sessions/new.html.erb:10: syntax error, unexpected ',', expecting end
+app/views/sessions/new.html.erb:10: syntax error, unexpected ')', expecting end
+app/views/sessions/new.html.erb:14: syntax error, unexpected end, expecting end-of-input
+Started GET "/login" for ::1 at 2019-10-22 16:30:26 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 1.8ms | Allocations: 924)
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 2879)
+
+
