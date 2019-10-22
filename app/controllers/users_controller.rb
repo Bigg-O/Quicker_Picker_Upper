@@ -23,6 +23,10 @@ class UsersController < ApplicationController
         end
 
     end
+    def statistics
+        # do some stuff with gamestats
+        
+    end
 
 
     private

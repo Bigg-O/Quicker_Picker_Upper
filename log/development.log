@@ -451,3 +451,42 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 715)
 
 
+Started GET "/gameover" for ::1 at 2019-10-22 11:31:20 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#gameover as HTML
+  Rendering rooms/gameover.html.erb
+  Rendered rooms/gameover.html.erb (Duration: 1.7ms | Allocations: 301)
+Completed 200 OK in 15ms (Views: 8.9ms | ActiveRecord: 0.0ms | Allocations: 3000)
+
+
+Started GET "/gameover" for ::1 at 2019-10-22 11:31:39 -0500
+Processing by RoomsController#gameover as HTML
+  Rendering rooms/gameover.html.erb
+  Rendered rooms/gameover.html.erb (Duration: 3.2ms | Allocations: 1420)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 3312)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"statistics", :controller=>"user"}, missing required keys: [:id]):
+    1: <h1> Game Over!!</h1>
+    2: <h2> The children have overcome your ability to clean up after them!!! <h2>
+    3: <%= link_to "Try again", rooms_path %>
+    4: <%= link_to "Statistics", statistics_path %>
+  
+app/views/rooms/gameover.html.erb:4
+Started GET "/gameover" for ::1 at 2019-10-22 11:32:14 -0500
+Processing by RoomsController#gameover as HTML
+  Rendering rooms/gameover.html.erb
+  Rendered rooms/gameover.html.erb (Duration: 1.1ms | Allocations: 1096)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 3008)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"statistics", :controller=>"user", :id=>nil}, missing required keys: [:id]):
+    1: <h1> Game Over!!</h1>
+    2: <h2> The children have overcome your ability to clean up after them!!! <h2>
+    3: <%= link_to "Try again", rooms_path %>
+    4: <%= link_to "Statistics", statistics_path(current_user) %>
+  
+app/views/rooms/gameover.html.erb:4

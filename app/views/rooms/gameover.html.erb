@@ -1,0 +1,10 @@
+<h1> Game Over!!</h1>
+<h2> The children have overcome your ability to clean up after them!!! <h2>
+<h3> Here are your stats:  </h3>
+<ul>
+<li> messes cleaned:<%= @gamestat.messes_cleaned %> </li>
+<li> total time:<%= @gamestat.initial_time - @gamestat.ending_time %> seconds </li>
+</ul>
+<%= link_to "Try again", rooms_path %>
+
+<%= link_to "Statistics", statistics_path(current_user) %>
