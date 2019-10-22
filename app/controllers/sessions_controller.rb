@@ -5,20 +5,21 @@ class SessionsController < ApplicationController
     end
     def create
         @user = User.find_by(user_name: user_params[:user_name])
-        puts user_params
+        
         if @user && @user.authenticate(params[:password])
             session[:user_id] = @user.id
             redirect_to users_path notice: "Logged in!"
         else
+            
             # flash.now[:alert] = "Email or password is invalid"
-            puts "ooh nooopppppppooooooooooooooooo"
+            @user ||= User.new
             render :new
         end
     end
 
     
     def destroy
-        session.delete :name
+        session.delete :user_id
         redirect_to login_path 
     end
 
