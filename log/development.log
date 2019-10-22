@@ -1365,3 +1365,521 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 2666)
 
 
+Started POST "/users" for ::1 at 2019-10-22 15:32:03 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"YQxG3eC8qQRrIFlz0+5+TK+OMFUqXgELH/EA7P3OcrHema8nUNS2QZs6C8+Ydgd6CNfGv+Ako9CfgfZNFQwCOA==", "user"=>{"user_name"=>"v", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "v"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "v"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_name", "v"], ["password_digest", "$2a$12$TMJRQAv1IJ4ceoftJE3XfuwXSuMTE.8WXuAeA149bk4owXY36m3ee"], ["created_at", "2019-10-22 20:32:04.042341"], ["updated_at", "2019-10-22 20:32:04.042341"]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 226ms (ActiveRecord: 1.5ms | Allocations: 10033)
+
+
+Started GET "/login" for ::1 at 2019-10-22 15:32:04 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 11.4ms | Allocations: 2826)
+Completed 200 OK in 22ms (Views: 18.3ms | ActiveRecord: 0.0ms | Allocations: 5605)
+
+
+Started POST "/login" for ::1 at 2019-10-22 15:32:06 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"X7vW7D/yNeDEuJ5KSLALglN6z650FWIHY2heSDrFy6wt3ubGAzlqSBGiaSRtGxrhUTBgAZz10CflGD4bLgwAvw==", "user"=>{"user_name"=>"v", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 3234)
+
+
+  
+NoMethodError (undefined method `find_by_username' for #<Class:0x00007fc9210e9b28>
+Did you mean?  find_by_sql):
+  
+app/controllers/sessions_controller.rb:7:in `create'
+Started GET "/login" for ::1 at 2019-10-22 15:34:24 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 1.4ms | Allocations: 608)
+Completed 200 OK in 9ms (Views: 2.4ms | ActiveRecord: 0.5ms | Allocations: 5787)
+
+
+Started POST "/login" for ::1 at 2019-10-22 15:34:27 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"f9uefjo4iC/MTNLiifx5CrBKL6iUY0eemUxSlu8jfTkNvq5UBvPXhxlWJYysV2hpsgCAB3yD9b4fPDLF++q2Kg==", "user"=>{"user_name"=>"v", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 3235)
+
+
+  
+NoMethodError (undefined method `find_by_username' for #<Class:0x00007fc91c23e7a8>
+Did you mean?  find_by_sql):
+  
+app/controllers/sessions_controller.rb:7:in `create'
+Started GET "/login" for ::1 at 2019-10-22 15:35:19 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 7.1ms | Allocations: 2507)
+Completed 200 OK in 31ms (Views: 11.8ms | ActiveRecord: 0.4ms | Allocations: 9891)
+
+
+Started POST "/login" for ::1 at 2019-10-22 15:35:22 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"J8iXgBfhxc7x1a03uvXVBmTxdnmxyt0OZGnuZaOnjjBVraeqKyqaZiTPWlmfXsRlZrvZ1lkqby7iGY42t25FIw==", "user"=>{"user_name"=>"v", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 3240)
+
+
+  
+NoMethodError (undefined method `find_by_username' for #<Class:0x00007f88aec14060>
+Did you mean?  find_by_sql):
+  
+app/controllers/sessions_controller.rb:7:in `create'
+Started GET "/users" for ::1 at 2019-10-22 15:35:26 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/index.html.erb (Duration: 0.8ms | Allocations: 207)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.0ms | Allocations: 1473)
+
+
+Started GET "/users/new" for ::1 at 2019-10-22 15:35:28 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb
+  Rendered users/new.html.erb (Duration: 1.4ms | Allocations: 696)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.0ms | Allocations: 1547)
+
+
+Started POST "/users" for ::1 at 2019-10-22 15:35:35 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"isfRtVWDMhFfISoTw7lXWn5HY5F+WPsT3tygLgtPVW41UjhP5estVK87eK+IIS5s2R6Ve7QiWcherFaP440l5w==", "user"=>{"user_name"=>"q", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "q"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "q"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_name", "q"], ["password_digest", "$2a$12$CIqo8vK968oQoK.KhUxJCeA45sOJAr/q6UMUH8uZ5umm5i76UipIm"], ["created_at", "2019-10-22 20:35:35.492802"], ["updated_at", "2019-10-22 20:35:35.492802"]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 200ms (ActiveRecord: 1.3ms | Allocations: 5167)
+
+
+Started GET "/login" for ::1 at 2019-10-22 15:35:35 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 0.7ms | Allocations: 534)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 1231)
+
+
+Started POST "/login" for ::1 at 2019-10-22 15:35:38 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"fvlxhW2ukJFX2YiI1pJ7QMFxN8D9rTQ7MB7wNzgHvzkMnEGvUWXPOYLDf+bzOWojwzuYbxVNhhu2bpBkLM50Kg==", "user"=>{"user_name"=>"q", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 3236)
+
+
+  
+NoMethodError (undefined method `find_by_username' for #<Class:0x00007f88aec14060>
+Did you mean?  find_by_sql):
+  
+app/controllers/sessions_controller.rb:7:in `create'
+Started GET "/login" for ::1 at 2019-10-22 15:36:17 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 0.8ms | Allocations: 587)
+Completed 200 OK in 7ms (Views: 1.3ms | ActiveRecord: 0.4ms | Allocations: 5760)
+
+
+Started POST "/login" for ::1 at 2019-10-22 15:36:23 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"dLT8qQ2VGt5u14v3tdJKi9gzhvm/FdheO8avKxCV2UoG0cyDMV5FdrvNfJmQeVvo2nkpVlf1an69ts94BFwSWQ==", "user"=>{"user_name"=>"v", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 3232)
+
+
+  
+NoMethodError (undefined method `find_by_username' for #<Class:0x00007f88ae36e280>
+Did you mean?  find_by_sql):
+  
+app/controllers/sessions_controller.rb:8:in `create'
+Started GET "/login" for ::1 at 2019-10-22 15:36:38 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 1.1ms | Allocations: 584)
+Completed 200 OK in 18ms (Views: 1.7ms | ActiveRecord: 0.5ms | Allocations: 5709)
+
+
+Started POST "/login" for ::1 at 2019-10-22 15:36:41 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"bam++kd9HHWNTS7UBlLOlnzHDQbrC9A8vopMTUsUA8ofzI7Qe7ZD3VhX2boj+d/1fo2iqQPrYhw4+iweX93I2Q==", "user"=>{"user_name"=>"v", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 3242)
+
+
+  
+NoMethodError (undefined method `find_by_username' for #<Class:0x00007f88aaaa4300>
+Did you mean?  find_by_sql):
+  
+app/controllers/sessions_controller.rb:8:in `create'
+Started GET "/login" for ::1 at 2019-10-22 15:37:17 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 0.9ms | Allocations: 584)
+Completed 200 OK in 7ms (Views: 1.5ms | ActiveRecord: 0.4ms | Allocations: 5689)
+
+
+Started POST "/login" for ::1 at 2019-10-22 15:37:20 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"DCrTzKWwS3iAgWmWx4pp0T4P0VUt3wCvZzjCkYmgRYt+T+PmmXsU0FWbnvjiIXiyPEV++sU/so/hSKLCnWmOmA==", "user"=>{"user_name"=>"v", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 3235)
+
+
+  
+NoMethodError (undefined method `find_by_username' for #<Class:0x00007f88ae42c848>
+Did you mean?  find_by_sql):
+  
+app/controllers/sessions_controller.rb:8:in `create'
+Started GET "/login" for ::1 at 2019-10-22 15:37:33 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 0.9ms | Allocations: 584)
+Completed 200 OK in 7ms (Views: 1.5ms | ActiveRecord: 0.5ms | Allocations: 5675)
+
+
+Started POST "/login" for ::1 at 2019-10-22 15:37:36 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"bcOW6zWuuEOIC2bbps5mwwLjkJni8OiMS7Yf4NswVQ8fpqbBCWXn610RkbWDZXegAKk/NgoQWqzNxn+zz/meHA==", "user"=>{"user_name"=>"v", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 3236)
+
+
+  
+NoMethodError (undefined method `find_by_username' for #<Class:0x00007f88aa3e3e80>
+Did you mean?  find_by_sql):
+  
+app/controllers/sessions_controller.rb:9:in `create'
+Started GET "/login" for ::1 at 2019-10-22 15:38:14 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 0.8ms | Allocations: 584)
+Completed 200 OK in 7ms (Views: 1.3ms | ActiveRecord: 0.4ms | Allocations: 5681)
+
+
+Started POST "/login" for ::1 at 2019-10-22 15:38:17 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"KfA4EJidQkP9XM/GueBY4DAVjz+XYAZmSrhnPHok1qVblQg6pFYd6yhGOKicS0mDMl8gkH+AtEbMyAdvbu0dtg==", "user"=>{"user_name"=>"v", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 3235)
+
+
+  
+NoMethodError (undefined method `find_by_username' for #<Class:0x00007f88aebdca98>
+Did you mean?  find_by_sql):
+  
+app/controllers/sessions_controller.rb:9:in `create'
+Started GET "/login" for ::1 at 2019-10-22 15:38:46 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 0.9ms | Allocations: 584)
+Completed 200 OK in 17ms (Views: 1.5ms | ActiveRecord: 0.4ms | Allocations: 5710)
+
+
+Started POST "/login" for ::1 at 2019-10-22 15:38:48 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"h9ewadQesr85Fj/sDq54xvRYwqaWuu7drksteoY2lBz1soBD6NXtF+wMyIIrBWml9hJtCX5aXP0oO00pkv9fDw==", "user"=>{"user_name"=>"v", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 3232)
+
+
+  
+NoMethodError (undefined method `find_by_username' for #<Class:0x00007f88aaa94180>
+Did you mean?  find_by_sql):
+  
+app/controllers/sessions_controller.rb:9:in `create'
+Started GET "/login" for ::1 at 2019-10-22 15:39:01 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 0.9ms | Allocations: 584)
+Completed 200 OK in 7ms (Views: 1.4ms | ActiveRecord: 0.4ms | Allocations: 5672)
+
+
+Started POST "/login" for ::1 at 2019-10-22 15:39:03 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"s66Ml3J/e/HyxLhIrum+gU1gy3jRo9eM5SjflU6oiMzBy7y9TrQkWSfeTyaLQq/iTypk1zlDZaxjWL/GWmFD3w==", "user"=>{"user_name"=>"v", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 3233)
+
+
+  
+NoMethodError (undefined method `find_by_username' for #<Class:0x00007f88ab5c5450>
+Did you mean?  find_by_sql):
+  
+app/controllers/sessions_controller.rb:9:in `create'
+Started GET "/login" for ::1 at 2019-10-22 15:40:18 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 1.0ms | Allocations: 584)
+Completed 200 OK in 7ms (Views: 1.5ms | ActiveRecord: 0.5ms | Allocations: 5673)
+
+
+Started POST "/login" for ::1 at 2019-10-22 15:40:21 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"/gxjOBCItQFiCRyziNGflAhwphj/vT54h4mWyhAAp4mMaVMSLEPqqbcT692teo73CjoJtxddjFgB+faZBMlsmg==", "user"=>{"user_name"=>"v", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms | Allocations: 3244)
+
+
+  
+NoMethodError (undefined method `find_by_username' for #<Class:0x00007f88ab60f050>
+Did you mean?  find_by_sql):
+  
+app/controllers/sessions_controller.rb:9:in `create'
+Started GET "/login" for ::1 at 2019-10-22 15:40:36 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 1.0ms | Allocations: 584)
+Completed 200 OK in 16ms (Views: 1.6ms | ActiveRecord: 0.4ms | Allocations: 5710)
+
+
+Started POST "/login" for ::1 at 2019-10-22 15:40:39 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"12qbzapQNJV7Gp/buT/OHkFZaDehURhn67UubqmkkdelD6vnlptrPa4AaLWclN99QxPHmEmxqkdtxU49vW1axA==", "user"=>{"user_name"=>"v", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms | Allocations: 1521)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=v):
+  
+app/controllers/sessions_controller.rb:9:in `create'
+Started GET "/login" for ::1 at 2019-10-22 15:40:52 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 0.8ms | Allocations: 584)
+Completed 200 OK in 6ms (Views: 1.3ms | ActiveRecord: 0.4ms | Allocations: 5675)
+
+
+Started POST "/login" for ::1 at 2019-10-22 15:40:54 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"jRXeAUgWLNs2NWTuMt+zxS2WVyWseeqPS3deiyPh12r/cO4rdN1zc+Mvk4AXdKKmL9z4ikSZWK/NBz7YNygceQ==", "user"=>{"user_name"=>"v", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms | Allocations: 933)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/sessions_controller.rb:9:in `create'
+Started GET "/users" for ::1 at 2019-10-22 15:44:09 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/index.html.erb (Duration: 1.8ms | Allocations: 335)
+Completed 200 OK in 16ms (Views: 9.2ms | ActiveRecord: 0.0ms | Allocations: 3148)
+
+
+Started GET "/login" for ::1 at 2019-10-22 15:44:10 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 3.3ms | Allocations: 2387)
+Completed 200 OK in 34ms (Views: 4.4ms | ActiveRecord: 0.6ms | Allocations: 8427)
+
+
+Started POST "/login" for ::1 at 2019-10-22 15:44:12 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"jwBsNhopigTJaP4COHWMAjeIbMzpQxHxWFVukr5JlIf9ZVwcJuLVrBxyCWwd3p1hNcLDYwGjo9HeJQ7BqoBflA==", "user"=>{"user_name"=>"v", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms | Allocations: 1214)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/sessions_controller.rb:9:in `create'
+Started GET "/login" for ::1 at 2019-10-22 15:45:14 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 1.0ms | Allocations: 607)
+Completed 200 OK in 20ms (Views: 1.6ms | ActiveRecord: 0.4ms | Allocations: 5825)
+
+
+Started POST "/login" for ::1 at 2019-10-22 15:45:16 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"fudKHnh/qfcbA7w2UMMyU7Ap06/rzMzZOS0cZRTggWkMgno0RLT2X84ZS1h1aCMwsmN8AAMsfvm/XXw2AClKeg==", "user"=>{"user_name"=>"v", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."user_name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 0.9ms | Allocations: 1912)
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 3394)
+
+
+Started POST "/login" for ::1 at 2019-10-22 15:45:52 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"Vmat32Wl4JKHpIesFRbXuKFPqWC9lsrDEQQgSflkcX4kA531WW6/OlK+cMIwvcbbowUGz1V2eOOXdEAa7a26bQ==", "user_name"=>"v", "password"=>"[FILTERED]", "commit"=>"Login"}
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms | Allocations: 1815)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/sessions_controller.rb:26:in `user_params'
+app/controllers/sessions_controller.rb:7:in `create'
+Started GET "/login" for ::1 at 2019-10-22 15:45:58 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 1.0ms | Allocations: 584)
+Completed 200 OK in 7ms (Views: 1.6ms | ActiveRecord: 0.5ms | Allocations: 4702)
+
+
+Started GET "/users" for ::1 at 2019-10-22 15:46:03 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/index.html.erb (Duration: 0.1ms | Allocations: 77)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 914)
+
+
+Started GET "/users/new" for ::1 at 2019-10-22 15:46:04 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb
+  Rendered users/new.html.erb (Duration: 1.1ms | Allocations: 679)
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.0ms | Allocations: 1512)
+
+
+Started POST "/users" for ::1 at 2019-10-22 15:46:08 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"04J3eAkCJVtuMigB5OXnFxqXwT7nrFuWuQsN731kwQ9sF56CuWo6Hp4oer2vfZ4hvc431C3W+U05e/tOlaaxhg==", "user"=>{"user_name"=>"v", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "v"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  Rendering users/new.html.erb
+  Rendered users/new.html.erb (Duration: 0.6ms | Allocations: 437)
+Completed 200 OK in 201ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 2743)
+
+
+Started GET "/login" for ::1 at 2019-10-22 15:46:13 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 0.8ms | Allocations: 531)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms | Allocations: 1225)
+
+
+Started POST "/login" for ::1 at 2019-10-22 15:46:15 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"dAymg1vVGrGkp+iXzfO50t/bNTlGfw2nS41AULjBR2oGaZapZx5FGXG9H/noWKix3ZGalq6fv4fN/SADrAiMeQ==", "user"=>{"user_name"=>"v", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "v"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 0.7ms | Allocations: 556)
+Completed 200 OK in 198ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 2009)
+
+
+Started PATCH "/login" for ::1 at 2019-10-22 15:46:54 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [PATCH] "/login"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/login" for ::1 at 2019-10-22 15:48:44 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 1.0ms | Allocations: 584)
+Completed 200 OK in 7ms (Views: 1.7ms | ActiveRecord: 0.4ms | Allocations: 5682)
+
+
+Started POST "/login" for ::1 at 2019-10-22 15:48:47 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"OFYTJfTpwvpvGLYdiI8M3rxnEJulCi4NhV7WL2imXLlKMyMPyCKdUroCQXOtJB29vi2/NE3qnC0DLrZ8fG+Xqg==", "user"=>{"user_name"=>"v", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "v"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 0.7ms | Allocations: 555)
+Completed 200 OK in 200ms (Views: 1.0ms | ActiveRecord: 0.2ms | Allocations: 2055)
+
+
+Started GET "/users" for ::1 at 2019-10-22 15:57:24 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 386)
+Completed 200 OK in 15ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 3200)
+
+
+Started GET "/users/new" for ::1 at 2019-10-22 15:57:31 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1998)
+Completed 200 OK in 34ms (Views: 3.5ms | ActiveRecord: 0.6ms | Allocations: 7583)
+
+
+Started GET "/login" for ::1 at 2019-10-22 15:57:35 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1068)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 2334)
+
+
+Started GET "/login" for ::1 at 2019-10-22 15:58:23 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 9.1ms | Allocations: 2507)
+Completed 200 OK in 33ms (Views: 15.8ms | ActiveRecord: 0.5ms | Allocations: 9959)
+
+
+Started GET "/users" for ::1 at 2019-10-22 15:58:26 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 213)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.0ms | Allocations: 1472)
+
+
+Started GET "/users/new" for ::1 at 2019-10-22 15:58:29 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 679)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.0ms | Allocations: 1503)
+
+
