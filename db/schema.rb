@@ -10,21 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_21_223129) do
+ActiveRecord::Schema.define(version: 2019_10_22_162208) do
 
   create_table "gamestats", force: :cascade do |t|
-    t.datetime "initial_time"
-    t.datetime "ending_time"
     t.integer "messes_cleaned"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.time "elapsed_time"
   end
 
   create_table "messes", force: :cascade do |t|
-    t.string "type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
   end
 
   create_table "roominfos", force: :cascade do |t|
