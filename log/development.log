@@ -1056,3 +1056,312 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 2362)
 
 
+Started GET "/gameover" for ::1 at 2019-10-22 13:40:52 -0500
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.0) lib/active_record/migration.rb:587:in `check_pending!'
+activerecord (6.0.0) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.0) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveTypeFromMesses (20191022161711)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TEMPORARY TABLE "amesses" ("id" integer NOT NULL PRIMARY KEY, "type" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "amesses" ("id","type","created_at","updated_at")
+                     SELECT "id","type","created_at","updated_at" FROM "messes"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE "messes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "messes" ("id" integer NOT NULL PRIMARY KEY, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "messes" ("id","created_at","updated_at")
+                     SELECT "id","created_at","updated_at" FROM "amesses"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "amesses"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191022161711"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RemoveTimesFromGamestats (20191022161909)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "agamestats" ("id" integer NOT NULL PRIMARY KEY, "initial_time" datetime DEFAULT NULL, "ending_time" datetime DEFAULT NULL, "messes_cleaned" integer DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "agamestats" ("id","initial_time","ending_time","messes_cleaned","user_id","created_at","updated_at")
+                     SELECT "id","initial_time","ending_time","messes_cleaned","user_id","created_at","updated_at" FROM "gamestats"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "gamestats"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "gamestats" ("id" integer NOT NULL PRIMARY KEY, "ending_time" datetime DEFAULT NULL, "messes_cleaned" integer DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "gamestats" ("id","ending_time","messes_cleaned","user_id","created_at","updated_at")
+                     SELECT "id","ending_time","messes_cleaned","user_id","created_at","updated_at" FROM "agamestats"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "agamestats"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "agamestats" ("id" integer NOT NULL PRIMARY KEY, "ending_time" datetime DEFAULT NULL, "messes_cleaned" integer DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "agamestats" ("id","ending_time","messes_cleaned","user_id","created_at","updated_at")
+                     SELECT "id","ending_time","messes_cleaned","user_id","created_at","updated_at" FROM "gamestats"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "gamestats"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "gamestats" ("id" integer NOT NULL PRIMARY KEY, "messes_cleaned" integer DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "gamestats" ("id","messes_cleaned","user_id","created_at","updated_at")
+                     SELECT "id","messes_cleaned","user_id","created_at","updated_at" FROM "agamestats"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "agamestats"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191022161909"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddNameToMesses (20191022162008)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "messes" ADD "name" varchar[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191022162008"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddElapsedTimeToGamestats (20191022162208)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "gamestats" ADD "elapsed_time" time[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191022162208"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/gameover" for ::1 at 2019-10-22 13:42:01 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#gameover as HTML
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 1336)
+
+
+  
+NoMethodError (undefined method `gamestats' for nil:NilClass):
+  
+app/controllers/rooms_controller.rb:5:in `gameover'
+Started GET "/login" for ::1 at 2019-10-22 13:42:13 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 25.2ms | Allocations: 2460)
+Completed 200 OK in 48ms (Views: 29.0ms | ActiveRecord: 0.7ms | Allocations: 9299)
+
+
+Started GET "/login" for ::1 at 2019-10-22 13:42:20 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 1.1ms | Allocations: 580)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.0ms | Allocations: 1340)
+
+
+Started GET "/users/new" for ::1 at 2019-10-22 13:42:30 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb
+  Rendered users/new.html.erb (Duration: 1.6ms | Allocations: 676)
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 2020)
+
+
+Started POST "/users" for ::1 at 2019-10-22 13:42:45 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"b1TqcQavf+yCJ4OUljW8lJAwi+C5eDaDg/U9njnLFl8F1o9RaZjYTzQe3kESrKEnavmAUqZQL0g8ZHBt0KLUMg==", "user"=>{"user_name"=>"jimmy", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "jimmy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "jimmy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_name", "jimmy"], ["password_digest", "$2a$12$fKrJ0vg7.E6COeOi00hMguRGpxHCaOvcCZ7Pd/kk5.HntH5cfmFtO"], ["created_at", "2019-10-22 18:42:46.168754"], ["updated_at", "2019-10-22 18:42:46.168754"]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 235ms (ActiveRecord: 1.2ms | Allocations: 5239)
+
+
+Started GET "/login" for ::1 at 2019-10-22 13:42:46 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 1.6ms | Allocations: 589)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms | Allocations: 1360)
+
+
+Started POST "/users" for ::1 at 2019-10-22 13:42:53 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"2NlkEvlwp92VdoePeGtniw6YhvCJmZDVaD8mlM6tnS2yWwEylkcAfiNP2lr88no49FGNQpaxiR7XrmtnJ8RfQA==", "user"=>{"user_name"=>"jimmy", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "jimmy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  Rendering users/new.html.erb
+  Rendered users/new.html.erb (Duration: 0.9ms | Allocations: 437)
+Completed 200 OK in 229ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 2563)
+
+
+Started GET "/users/new" for ::1 at 2019-10-22 13:46:08 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb
+  Rendered users/new.html.erb (Duration: 1.3ms | Allocations: 438)
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 1211)
+
+
+Started POST "/users" for ::1 at 2019-10-22 13:46:20 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"K3oLbsf+YjY24+b4SdzVvjfMI0IyJoAtlLMgz6Pc5p9B+G5OqMnFlYDauy3NRcgNzQUo8C0OmeYrIm08SrUk8g==", "user"=>{"user_name"=>"timmy", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "timmy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "timmy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_name", "timmy"], ["password_digest", "$2a$12$OfhHg7GzYrzR2LuDloNTdeh0IIejBYoJ3ZqQDFg9n1RxXb.fP98Ga"], ["created_at", "2019-10-22 18:46:20.523629"], ["updated_at", "2019-10-22 18:46:20.523629"]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 230ms (ActiveRecord: 2.6ms | Allocations: 4491)
+
+
+Started GET "/login" for ::1 at 2019-10-22 13:46:20 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 2.3ms | Allocations: 579)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 1352)
+
+
+Started POST "/users" for ::1 at 2019-10-22 13:46:28 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"a8WbeyzqlTAHgoPdEy0U2RERMS/euqz55WQrlpCTuPoBR/5bQ90yk7G73giXtAlq69g6ncGStTJa9WZlefp6lw==", "user"=>{"user_name"=>"timmy", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "timmy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  Rendering users/new.html.erb
+  Rendered users/new.html.erb (Duration: 0.8ms | Allocations: 434)
+Completed 200 OK in 224ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 2507)
+
+
+Started GET "/login" for ::1 at 2019-10-22 13:57:35 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 0.9ms | Allocations: 1089)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 3016)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check Login
+<%= form_with model:@user url:"/login" do %>
+    <%= f.label :user_name%>
+    <%= f.text_field :user_name%><br>
+    <%= f.label :password%>
+    <%= f.password_field  :password%><br>
+    <%= f.submit"Login" %>
+<% end %>
+):
+1:    Login
+2:    <%= form_with model:@user url:"/login" do %>
+3:        <%= f.label :user_name%>
+4:        <%= f.text_field :user_name%><br>
+5:        <%= f.label :password%>
+6:        <%= f.password_field  :password%><br>
+7:        <%= f.submit"Login" %>
+8:    <% end %>
+  
+app/views/sessions/new.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting end
+app/views/sessions/new.html.erb:2: syntax error, unexpected do, expecting end
+app/views/sessions/new.html.erb:10: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/new.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting end
+app/views/sessions/new.html.erb:2: syntax error, unexpected do, expecting end
+app/views/sessions/new.html.erb:10: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/new.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting end
+app/views/sessions/new.html.erb:2: syntax error, unexpected do, expecting end
+app/views/sessions/new.html.erb:10: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/new.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting end
+app/views/sessions/new.html.erb:2: syntax error, unexpected do, expecting end
+app/views/sessions/new.html.erb:10: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/new.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting end
+app/views/sessions/new.html.erb:2: syntax error, unexpected do, expecting end
+app/views/sessions/new.html.erb:10: syntax error, unexpected end, expecting end-of-input
+app/views/sessions/new.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting end
+app/views/sessions/new.html.erb:2: syntax error, unexpected do, expecting end
+app/views/sessions/new.html.erb:10: syntax error, unexpected end, expecting end-of-input
+Started GET "/login" for ::1 at 2019-10-22 13:57:47 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 265.3ms | Allocations: 146937)
+Completed 500 Internal Server Error in 269ms (ActiveRecord: 0.0ms | Allocations: 148862)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00007f84f0144480>:0x00007f84f014eb88>):
+    1: Login
+    2: <%= form_with model:@user, url:"/login" do %>
+    3:     <%= f.label :user_name%>
+    4:     <%= f.text_field :user_name%><br>
+    5:     <%= f.label :password%>
+    6:     <%= f.password_field  :password%><br>
+  
+app/views/sessions/new.html.erb:3
+app/views/sessions/new.html.erb:2
+Started GET "/login" for ::1 at 2019-10-22 13:58:42 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 236.1ms | Allocations: 146722)
+Completed 500 Internal Server Error in 238ms (ActiveRecord: 0.0ms | Allocations: 147473)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00007f84f0144480>:0x00007f84f1b65a08>):
+    1: Login
+    2: <%= form_with model:@user, url:"/login" do %>
+    3:     <%= f.label :user_name%>
+    4:     <%= f.text_field :user_name%><br>
+    5:     <%= f.label :password%>
+    6:     <%= f.password_field  :password%><br>
+  
+app/views/sessions/new.html.erb:3
+app/views/sessions/new.html.erb:2
+Started GET "/login" for ::1 at 2019-10-22 13:58:55 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 2.2ms | Allocations: 725)
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 2666)
+
+
