@@ -28,6 +28,7 @@ class UsersController < ApplicationController
     end
     def statistics
         # do some stuff with gamestats
+
         
     end
 
