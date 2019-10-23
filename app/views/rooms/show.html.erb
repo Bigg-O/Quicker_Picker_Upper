@@ -19,7 +19,6 @@
     <% end %>
 </br>
 
-
 <h3>Inventory</h3>
 <p>-
 <% if !Room.inventory.tools.empty? %>
@@ -30,5 +29,7 @@
     <%end%></p>
 </br>
 
+<h1>Time</h1>
+<p><%= (Time.now - @playTime).to_i %> seconds.</p>
 
 <p><%= link_to "Back to the House", "/rooms" %></p>
