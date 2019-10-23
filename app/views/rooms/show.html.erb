@@ -1,12 +1,34 @@
 <h1><%= @room.name %></h1>
+</br>
+</br>
+<h3>Messes</h3>
+    <% @room.messes.each do |mess| %>
+        <p>-<%= mess.name %>
+        <% if mess.name != "The Room Is Clean" && Room.inventory.tools.first.clean_mess == true %>
+                <%= button_to 'Clean', clean_button_path(:id => @room.id, :mess_in_room => mess.id), method: :post %>
+            <%end%>
+    <%end%>
+</br>
+</br>
 
-Tools in the room <br>
+
+<h3>Tools in the room</h3> 
     <% @room.tools.each do |tool| %>
         <p>- <%= tool.name %></p>
+        <%= button_to 'Pick Up', pick_up_button_path(:id => @room.id, :tool_picked => tool.id), method: :post %></br>
     <% end %>
+</br>
 
-<h1>Inventory</h1>
-<p>You have a <%= Room.all.last.tools.last.name %>.</p>
+<h3>Inventory</h3>
+<p>-
+<% if !Room.inventory.tools.empty? %>
+    <%= Room.inventory.tools.first.name %>
+    <%= button_to 'Drop', drop_button_path(:id => @room.id), method: :post %></br>
+        <% else %>
+        <%= "Empty" %></p>
+    <%end%></p>
+</br>
+
 <h1>Time</h1>
 <p><%= (Time.now - @playTime).to_i %> seconds.</p>
 

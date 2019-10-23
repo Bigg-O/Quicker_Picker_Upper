@@ -11,3 +11,11 @@
 
 <h1>Time</h1>
 <p><%= (Time.now - @playTime).to_i %> seconds.</p>
+
+<p>
+<% if !Room.inventory.tools.empty? %>
+    <%= Room.inventory.tools.first.name %>
+        <% else %>
+        <%= "Empty" %></p>
+    <%end%></p>
+
