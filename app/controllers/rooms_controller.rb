@@ -3,7 +3,7 @@ class RoomsController < ApplicationController
     @@timeStep = 0
     @@playTime = nil
 
-    def playgame
+    def newgame
         @@playTime = Time.now
         redirect_to action: 'index'
     end
