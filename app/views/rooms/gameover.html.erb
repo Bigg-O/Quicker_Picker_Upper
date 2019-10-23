@@ -5,6 +5,9 @@
 <li> messes cleaned:<%= @gamestat.messes_cleaned %> </li>
 <li> total time:<%= @gamestat.elapsed_time.strftime("%H:%M:%S") %>  </li>
 </ul>
-<%= link_to "Try again", rooms_path %>
+<%= form_with(url: "/newgame", method: "post" ) do %>
+    <%= submit_tag("Try Again") %>
+<% end %>
+
 
 <%= link_to "Statistics", statistics_path(current_user) %>
