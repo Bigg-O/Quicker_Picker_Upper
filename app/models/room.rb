@@ -31,7 +31,7 @@ class Room < ApplicationRecord
         Room.all.select{|room| room.name != 'Inventory'}
     end
 
-    def inventory
+    def self.inventory
         inv = Room.all.select { |room| room.name == "Inventory"}.first
     end
 
@@ -42,16 +42,22 @@ class Room < ApplicationRecord
 
 
     def pick_up(tool_picked)
-        inv = Room.all.select { |room| room.name == "Inventory"}.first
-        if inv.length == 0 && self.tools.length != 0
-            inv.tools.first = tool_picked
-            self.tools.delete(tool_picked)
+        tool = Tool.all.find_by_id(tool_picked)
+        if Room.inventory.tools.length == 0 && self.tools.length != 0
+            Room.inventory.tools << tool
+            self.tools.delete(tool)
         end
     end
 
     def drop_item
-        self.tools << inventory.tools.first
-        inventory.tools.pop
+        self.tools << Room.inventory.tools.first
+        Room.inventory.tools.delete
+        Room.inventory.save
+        self.save
+    end
+
+    def clean_mess
+
     end
 
     def self.addkid
