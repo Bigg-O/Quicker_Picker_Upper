@@ -4,8 +4,8 @@
 <h3>Messes</h3>
     <% @room.messes.each do |mess| %>
         <p>-<%= mess.name %>
-        <% if mess.name != "The Room Is Clean" && Room.inventory.tools.first == mess.tool %>
-                <%= button_to 'Clean', clean_button_path(:id => @room.id, :mess => mess), method: :post %>
+        <% if mess.name != "The Room Is Clean" && Room.inventory.tools.first == mess.tool%>
+                <%= button_to 'Clean', clean_button_path(:id => @room.id, :mess => mess.id), method: :post %>
             <%end%>
     <%end%>
 </br>

@@ -32,6 +32,7 @@ class RoomsController < ApplicationController
     def clean_button
         @room = Room.find(params[:id])
         @room.clean_mess(params[:mess])
+        redirect_to room_path(@room)
     end
 
 
