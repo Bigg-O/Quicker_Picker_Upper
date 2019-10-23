@@ -8,4 +8,9 @@
 
 <h1>Inventory</h1>
 
-<p>You have a <%= Room.all.last.tools.last.name %>.</p>
+<p>
+<% if !Room.inventory.tools.empty? %>
+    <%= Room.inventory.tools.first.name %>
+        <% else %>
+        <%= "Empty" %></p>
+    <%end%></p>

@@ -1,15 +1,5 @@
 class RoomsController < ApplicationController
 
-    def newgame
-    end
-    
-    def gameover
-        @gamestat = current_user.gamestats.last
-
-    end
-
-
-
     
     def index
         @rooms = Room.all
@@ -25,6 +15,18 @@ class RoomsController < ApplicationController
     def gameover
         @gamestat = current_user.gamestats.last
 
+    end
+
+    def drop_button
+        @room = Room.find(params[:id])
+        @room.drop_item
+        redirect_to room_path(@room)
+    end
+
+    def pick_up_button
+        @room = Room.find(params[:id])
+        @room.pick_up(params[:tool_picked])
+        redirect_to room_path(@room)
     end
 
 
