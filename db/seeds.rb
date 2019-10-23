@@ -2,7 +2,7 @@ Room.destroy_all
 Mess.destroy_all
 Tool.destroy_all
 
-livingrooom = Room.create(name: "Living Room")
+livingroom = Room.create(name: "Living Room")
 kitchen = Room.create(name: "Kitchen")
 bedroom = Room.create(name: "Bedroom")
 bathroom = Room.create(name: "Bathroom")
@@ -35,7 +35,7 @@ Gamestat.create( messes_cleaned: 50, user: dirtydude, elapsed_time: Time.parse("
 
 
 
-Roominfo.create(room_id: livingrooom, mess_id: no_mess)
+Roominfo.create(room_id: livingroom, mess_id: no_mess)
 Roominfo.create(room_id: kitchen, mess_id: no_mess)
 Roominfo.create(room_id: bedroom, mess_id: no_mess)
 Roominfo.create(room_id: bathroom, mess_id: no_mess)

@@ -1911,3 +1911,326 @@ Migrating to AddRoomIdToTools (20191023012426)
   [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  [1m[36mMess Load (0.1ms)[0m  [1m[34mSELECT "messes".* FROM "messes"[0m
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.3ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Living Room"], ["created_at", "2019-10-23 14:41:23.533740"], ["updated_at", "2019-10-23 14:41:23.533740"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.2ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Kitchen"], ["created_at", "2019-10-23 14:41:23.537018"], ["updated_at", "2019-10-23 14:41:23.537018"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.2ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Bedroom"], ["created_at", "2019-10-23 14:41:23.539840"], ["updated_at", "2019-10-23 14:41:23.539840"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.2ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Bathroom"], ["created_at", "2019-10-23 14:41:23.543242"], ["updated_at", "2019-10-23 14:41:23.543242"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.3ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Diningroom"], ["created_at", "2019-10-23 14:41:23.553227"], ["updated_at", "2019-10-23 14:41:23.553227"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.3ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Inventory"], ["created_at", "2019-10-23 14:41:23.573271"], ["updated_at", "2019-10-23 14:41:23.573271"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTool Create (0.3ms)[0m  [1m[32mINSERT INTO "tools" ("name", "created_at", "updated_at", "room_id") VALUES (?, ?, ?, ?)[0m  [["name", "Basket"], ["created_at", "2019-10-23 14:41:23.596574"], ["updated_at", "2019-10-23 14:41:23.596574"], ["room_id", 2]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Destroy (0.3ms)[0m  [1m[31mDELETE FROM "rooms" WHERE "rooms"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Destroy (0.2ms)[0m  [1m[31mDELETE FROM "rooms" WHERE "rooms"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Destroy (0.2ms)[0m  [1m[31mDELETE FROM "rooms" WHERE "rooms"."id" = ?[0m  [["id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Destroy (0.2ms)[0m  [1m[31mDELETE FROM "rooms" WHERE "rooms"."id" = ?[0m  [["id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Destroy (0.2ms)[0m  [1m[31mDELETE FROM "rooms" WHERE "rooms"."id" = ?[0m  [["id", 5]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Destroy (0.2ms)[0m  [1m[31mDELETE FROM "rooms" WHERE "rooms"."id" = ?[0m  [["id", 6]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMess Load (0.1ms)[0m  [1m[34mSELECT "messes".* FROM "messes"[0m
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTool Destroy (0.2ms)[0m  [1m[31mDELETE FROM "tools" WHERE "tools"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.2ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Living Room"], ["created_at", "2019-10-23 14:41:42.515772"], ["updated_at", "2019-10-23 14:41:42.515772"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.2ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Kitchen"], ["created_at", "2019-10-23 14:41:42.518719"], ["updated_at", "2019-10-23 14:41:42.518719"]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.2ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Bedroom"], ["created_at", "2019-10-23 14:41:42.521419"], ["updated_at", "2019-10-23 14:41:42.521419"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.2ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Bathroom"], ["created_at", "2019-10-23 14:41:42.524141"], ["updated_at", "2019-10-23 14:41:42.524141"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.2ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Diningroom"], ["created_at", "2019-10-23 14:41:42.527114"], ["updated_at", "2019-10-23 14:41:42.527114"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.2ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Inventory"], ["created_at", "2019-10-23 14:41:42.529946"], ["updated_at", "2019-10-23 14:41:42.529946"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTool Create (0.3ms)[0m  [1m[32mINSERT INTO "tools" ("name", "created_at", "updated_at", "room_id") VALUES (?, ?, ?, ?)[0m  [["name", "Basket"], ["created_at", "2019-10-23 14:41:42.538102"], ["updated_at", "2019-10-23 14:41:42.538102"], ["room_id", 8]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Destroy (0.3ms)[0m  [1m[31mDELETE FROM "rooms" WHERE "rooms"."id" = ?[0m  [["id", 7]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Destroy (0.3ms)[0m  [1m[31mDELETE FROM "rooms" WHERE "rooms"."id" = ?[0m  [["id", 8]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Destroy (0.2ms)[0m  [1m[31mDELETE FROM "rooms" WHERE "rooms"."id" = ?[0m  [["id", 9]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Destroy (0.2ms)[0m  [1m[31mDELETE FROM "rooms" WHERE "rooms"."id" = ?[0m  [["id", 10]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Destroy (0.2ms)[0m  [1m[31mDELETE FROM "rooms" WHERE "rooms"."id" = ?[0m  [["id", 11]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Destroy (0.2ms)[0m  [1m[31mDELETE FROM "rooms" WHERE "rooms"."id" = ?[0m  [["id", 12]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMess Load (0.1ms)[0m  [1m[34mSELECT "messes".* FROM "messes"[0m
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTool Destroy (0.2ms)[0m  [1m[31mDELETE FROM "tools" WHERE "tools"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.2ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Living Room"], ["created_at", "2019-10-23 14:42:24.685510"], ["updated_at", "2019-10-23 14:42:24.685510"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.2ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Kitchen"], ["created_at", "2019-10-23 14:42:24.688623"], ["updated_at", "2019-10-23 14:42:24.688623"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.2ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Bedroom"], ["created_at", "2019-10-23 14:42:24.691442"], ["updated_at", "2019-10-23 14:42:24.691442"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.2ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Bathroom"], ["created_at", "2019-10-23 14:42:24.696455"], ["updated_at", "2019-10-23 14:42:24.696455"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.2ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Diningroom"], ["created_at", "2019-10-23 14:42:24.699234"], ["updated_at", "2019-10-23 14:42:24.699234"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.2ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Inventory"], ["created_at", "2019-10-23 14:42:24.701822"], ["updated_at", "2019-10-23 14:42:24.701822"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTool Create (0.3ms)[0m  [1m[32mINSERT INTO "tools" ("name", "created_at", "updated_at", "room_id") VALUES (?, ?, ?, ?)[0m  [["name", "Basket"], ["created_at", "2019-10-23 14:42:24.716852"], ["updated_at", "2019-10-23 14:42:24.716852"], ["room_id", 14]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTool Create (0.2ms)[0m  [1m[32mINSERT INTO "tools" ("name", "created_at", "updated_at", "room_id") VALUES (?, ?, ?, ?)[0m  [["name", "Vaccuum"], ["created_at", "2019-10-23 14:42:24.720225"], ["updated_at", "2019-10-23 14:42:24.720225"], ["room_id", 13]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTool Create (0.2ms)[0m  [1m[32mINSERT INTO "tools" ("name", "created_at", "updated_at", "room_id") VALUES (?, ?, ?, ?)[0m  [["name", "Cloth"], ["created_at", "2019-10-23 14:42:24.723408"], ["updated_at", "2019-10-23 14:42:24.723408"], ["room_id", 15]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTool Create (0.2ms)[0m  [1m[32mINSERT INTO "tools" ("name", "created_at", "updated_at", "room_id") VALUES (?, ?, ?, ?)[0m  [["name", "Mop"], ["created_at", "2019-10-23 14:42:24.726621"], ["updated_at", "2019-10-23 14:42:24.726621"], ["room_id", 18]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMess Create (0.2ms)[0m  [1m[32mINSERT INTO "messes" ("created_at", "updated_at", "name") VALUES (?, ?, ?)[0m  [["created_at", "2019-10-23 14:42:24.731816"], ["updated_at", "2019-10-23 14:42:24.731816"], ["name", "Toy Spill"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMess Create (0.2ms)[0m  [1m[32mINSERT INTO "messes" ("created_at", "updated_at", "name") VALUES (?, ?, ?)[0m  [["created_at", "2019-10-23 14:42:24.734440"], ["updated_at", "2019-10-23 14:42:24.734440"], ["name", "Snack Spill"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMess Create (0.2ms)[0m  [1m[32mINSERT INTO "messes" ("created_at", "updated_at", "name") VALUES (?, ?, ?)[0m  [["created_at", "2019-10-23 14:42:24.737037"], ["updated_at", "2019-10-23 14:42:24.737037"], ["name", "Drawing on the Wall"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMess Create (0.2ms)[0m  [1m[32mINSERT INTO "messes" ("created_at", "updated_at", "name") VALUES (?, ?, ?)[0m  [["created_at", "2019-10-23 14:42:24.739666"], ["updated_at", "2019-10-23 14:42:24.739666"], ["name", "Juice Spill"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMess Create (0.2ms)[0m  [1m[32mINSERT INTO "messes" ("created_at", "updated_at", "name") VALUES (?, ?, ?)[0m  [["created_at", "2019-10-23 14:42:24.742255"], ["updated_at", "2019-10-23 14:42:24.742255"], ["name", "No_mess"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "Mr. Clean"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_name", "Mr. Clean"], ["password_digest", "$2a$12$qCSEruaifMtrNTeYAhM/..MapVDqWBnTWB53tbB09L4FxmI9WRSnu"], ["created_at", "2019-10-23 14:42:24.934256"], ["updated_at", "2019-10-23 14:42:24.934256"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "Queen of Clean"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_name", "Queen of Clean"], ["password_digest", "$2a$12$IVtjVWCOuDxLO9g6p6E5C.dmWPOdmL7TFMo/ey/6eXTJoZuEoI9yi"], ["created_at", "2019-10-23 14:42:25.115768"], ["updated_at", "2019-10-23 14:42:25.115768"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "Average Joe"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_name", "Average Joe"], ["password_digest", "$2a$12$EBPizMLar/WjniuJKMHON.OO/jE33IrwWQIVnrizgo6TXQLBqQ/3a"], ["created_at", "2019-10-23 14:42:25.294314"], ["updated_at", "2019-10-23 14:42:25.294314"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "Subpar Steve"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_name", "Subpar Steve"], ["password_digest", "$2a$12$bCrzg1BgRkRPB3TkCREnwuL2Hj5W09w8wGC1hEvOK.iVJ5TPWc/7y"], ["created_at", "2019-10-23 14:42:25.492565"], ["updated_at", "2019-10-23 14:42:25.492565"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "Dirty Dude"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_name", "Dirty Dude"], ["password_digest", "$2a$12$zU1dCoZFusT4Lhdynfmm6uNDzhzvX1Run5vmGWe8Epzvby6THARAG"], ["created_at", "2019-10-23 14:42:25.678215"], ["updated_at", "2019-10-23 14:42:25.678215"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGamestat Create (0.2ms)[0m  [1m[32mINSERT INTO "gamestats" ("messes_cleaned", "user_id", "created_at", "updated_at", "elapsed_time") VALUES (?, ?, ?, ?, ?)[0m  [["messes_cleaned", 250], ["user_id", 9], ["created_at", "2019-10-23 14:42:25.686035"], ["updated_at", "2019-10-23 14:42:25.686035"], ["elapsed_time", "2000-01-01 06:45:00"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGamestat Create (0.2ms)[0m  [1m[32mINSERT INTO "gamestats" ("messes_cleaned", "user_id", "created_at", "updated_at", "elapsed_time") VALUES (?, ?, ?, ?, ?)[0m  [["messes_cleaned", 200], ["user_id", 8], ["created_at", "2019-10-23 14:42:25.689657"], ["updated_at", "2019-10-23 14:42:25.689657"], ["elapsed_time", "2000-01-01 06:30:00"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGamestat Create (0.2ms)[0m  [1m[32mINSERT INTO "gamestats" ("messes_cleaned", "user_id", "created_at", "updated_at", "elapsed_time") VALUES (?, ?, ?, ?, ?)[0m  [["messes_cleaned", 150], ["user_id", 10], ["created_at", "2019-10-23 14:42:25.692736"], ["updated_at", "2019-10-23 14:42:25.692736"], ["elapsed_time", "2000-01-01 06:20:00"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGamestat Create (0.2ms)[0m  [1m[32mINSERT INTO "gamestats" ("messes_cleaned", "user_id", "created_at", "updated_at", "elapsed_time") VALUES (?, ?, ?, ?, ?)[0m  [["messes_cleaned", 100], ["user_id", 11], ["created_at", "2019-10-23 14:42:25.695788"], ["updated_at", "2019-10-23 14:42:25.695788"], ["elapsed_time", "2000-01-01 06:15:00"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGamestat Create (0.2ms)[0m  [1m[32mINSERT INTO "gamestats" ("messes_cleaned", "user_id", "created_at", "updated_at", "elapsed_time") VALUES (?, ?, ?, ?, ?)[0m  [["messes_cleaned", 50], ["user_id", 12], ["created_at", "2019-10-23 14:42:25.698567"], ["updated_at", "2019-10-23 14:42:25.698567"], ["elapsed_time", "2000-01-01 06:10:00"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Destroy (0.4ms)[0m  [1m[31mDELETE FROM "rooms" WHERE "rooms"."id" = ?[0m  [["id", 13]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Destroy (0.3ms)[0m  [1m[31mDELETE FROM "rooms" WHERE "rooms"."id" = ?[0m  [["id", 14]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Destroy (0.2ms)[0m  [1m[31mDELETE FROM "rooms" WHERE "rooms"."id" = ?[0m  [["id", 15]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Destroy (0.2ms)[0m  [1m[31mDELETE FROM "rooms" WHERE "rooms"."id" = ?[0m  [["id", 16]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Destroy (0.2ms)[0m  [1m[31mDELETE FROM "rooms" WHERE "rooms"."id" = ?[0m  [["id", 17]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Destroy (0.2ms)[0m  [1m[31mDELETE FROM "rooms" WHERE "rooms"."id" = ?[0m  [["id", 18]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMess Load (0.1ms)[0m  [1m[34mSELECT "messes".* FROM "messes"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMess Destroy (0.2ms)[0m  [1m[31mDELETE FROM "messes" WHERE "messes"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMess Destroy (0.2ms)[0m  [1m[31mDELETE FROM "messes" WHERE "messes"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMess Destroy (0.2ms)[0m  [1m[31mDELETE FROM "messes" WHERE "messes"."id" = ?[0m  [["id", 3]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMess Destroy (0.2ms)[0m  [1m[31mDELETE FROM "messes" WHERE "messes"."id" = ?[0m  [["id", 4]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMess Destroy (0.2ms)[0m  [1m[31mDELETE FROM "messes" WHERE "messes"."id" = ?[0m  [["id", 5]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTool Load (0.2ms)[0m  [1m[34mSELECT "tools".* FROM "tools"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTool Destroy (0.2ms)[0m  [1m[31mDELETE FROM "tools" WHERE "tools"."id" = ?[0m  [["id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTool Destroy (0.2ms)[0m  [1m[31mDELETE FROM "tools" WHERE "tools"."id" = ?[0m  [["id", 4]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTool Destroy (0.2ms)[0m  [1m[31mDELETE FROM "tools" WHERE "tools"."id" = ?[0m  [["id", 5]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTool Destroy (0.2ms)[0m  [1m[31mDELETE FROM "tools" WHERE "tools"."id" = ?[0m  [["id", 6]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.2ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Living Room"], ["created_at", "2019-10-23 14:42:51.649902"], ["updated_at", "2019-10-23 14:42:51.649902"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.2ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Kitchen"], ["created_at", "2019-10-23 14:42:51.652998"], ["updated_at", "2019-10-23 14:42:51.652998"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.2ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Bedroom"], ["created_at", "2019-10-23 14:42:51.655694"], ["updated_at", "2019-10-23 14:42:51.655694"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.2ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Bathroom"], ["created_at", "2019-10-23 14:42:51.658366"], ["updated_at", "2019-10-23 14:42:51.658366"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.2ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Diningroom"], ["created_at", "2019-10-23 14:42:51.660788"], ["updated_at", "2019-10-23 14:42:51.660788"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.2ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Inventory"], ["created_at", "2019-10-23 14:42:51.663225"], ["updated_at", "2019-10-23 14:42:51.663225"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTool Create (0.2ms)[0m  [1m[32mINSERT INTO "tools" ("name", "created_at", "updated_at", "room_id") VALUES (?, ?, ?, ?)[0m  [["name", "Basket"], ["created_at", "2019-10-23 14:42:51.666797"], ["updated_at", "2019-10-23 14:42:51.666797"], ["room_id", 20]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTool Create (0.2ms)[0m  [1m[32mINSERT INTO "tools" ("name", "created_at", "updated_at", "room_id") VALUES (?, ?, ?, ?)[0m  [["name", "Vaccuum"], ["created_at", "2019-10-23 14:42:51.669262"], ["updated_at", "2019-10-23 14:42:51.669262"], ["room_id", 19]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTool Create (0.2ms)[0m  [1m[32mINSERT INTO "tools" ("name", "created_at", "updated_at", "room_id") VALUES (?, ?, ?, ?)[0m  [["name", "Cloth"], ["created_at", "2019-10-23 14:42:51.671589"], ["updated_at", "2019-10-23 14:42:51.671589"], ["room_id", 21]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTool Create (0.2ms)[0m  [1m[32mINSERT INTO "tools" ("name", "created_at", "updated_at", "room_id") VALUES (?, ?, ?, ?)[0m  [["name", "Mop"], ["created_at", "2019-10-23 14:42:51.673987"], ["updated_at", "2019-10-23 14:42:51.673987"], ["room_id", 24]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMess Create (0.2ms)[0m  [1m[32mINSERT INTO "messes" ("created_at", "updated_at", "name") VALUES (?, ?, ?)[0m  [["created_at", "2019-10-23 14:42:51.676413"], ["updated_at", "2019-10-23 14:42:51.676413"], ["name", "Toy Spill"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMess Create (0.3ms)[0m  [1m[32mINSERT INTO "messes" ("created_at", "updated_at", "name") VALUES (?, ?, ?)[0m  [["created_at", "2019-10-23 14:42:51.688191"], ["updated_at", "2019-10-23 14:42:51.688191"], ["name", "Snack Spill"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMess Create (0.2ms)[0m  [1m[32mINSERT INTO "messes" ("created_at", "updated_at", "name") VALUES (?, ?, ?)[0m  [["created_at", "2019-10-23 14:42:51.691638"], ["updated_at", "2019-10-23 14:42:51.691638"], ["name", "Drawing on the Wall"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMess Create (0.2ms)[0m  [1m[32mINSERT INTO "messes" ("created_at", "updated_at", "name") VALUES (?, ?, ?)[0m  [["created_at", "2019-10-23 14:42:51.694519"], ["updated_at", "2019-10-23 14:42:51.694519"], ["name", "Juice Spill"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMess Create (0.2ms)[0m  [1m[32mINSERT INTO "messes" ("created_at", "updated_at", "name") VALUES (?, ?, ?)[0m  [["created_at", "2019-10-23 14:42:51.697250"], ["updated_at", "2019-10-23 14:42:51.697250"], ["name", "No_mess"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "Mr. Clean"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "Queen of Clean"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "Average Joe"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "Subpar Steve"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "Dirty Dude"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "Queen of Clean"], ["LIMIT", 1]]
+  [1m[36mGamestat Create (0.2ms)[0m  [1m[32mINSERT INTO "gamestats" ("messes_cleaned", "created_at", "updated_at", "elapsed_time") VALUES (?, ?, ?, ?)[0m  [["messes_cleaned", 250], ["created_at", "2019-10-23 14:42:52.624691"], ["updated_at", "2019-10-23 14:42:52.624691"], ["elapsed_time", "2000-01-01 06:45:00"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "Mr. Clean"], ["LIMIT", 1]]
+  [1m[36mGamestat Create (0.2ms)[0m  [1m[32mINSERT INTO "gamestats" ("messes_cleaned", "created_at", "updated_at", "elapsed_time") VALUES (?, ?, ?, ?)[0m  [["messes_cleaned", 200], ["created_at", "2019-10-23 14:42:52.643675"], ["updated_at", "2019-10-23 14:42:52.643675"], ["elapsed_time", "2000-01-01 06:30:00"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "Average Joe"], ["LIMIT", 1]]
+  [1m[36mGamestat Create (0.1ms)[0m  [1m[32mINSERT INTO "gamestats" ("messes_cleaned", "created_at", "updated_at", "elapsed_time") VALUES (?, ?, ?, ?)[0m  [["messes_cleaned", 150], ["created_at", "2019-10-23 14:42:52.647369"], ["updated_at", "2019-10-23 14:42:52.647369"], ["elapsed_time", "2000-01-01 06:20:00"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "Subpar Steve"], ["LIMIT", 1]]
+  [1m[36mGamestat Create (0.1ms)[0m  [1m[32mINSERT INTO "gamestats" ("messes_cleaned", "created_at", "updated_at", "elapsed_time") VALUES (?, ?, ?, ?)[0m  [["messes_cleaned", 100], ["created_at", "2019-10-23 14:42:52.650877"], ["updated_at", "2019-10-23 14:42:52.650877"], ["elapsed_time", "2000-01-01 06:15:00"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "Dirty Dude"], ["LIMIT", 1]]
+  [1m[36mGamestat Create (0.1ms)[0m  [1m[32mINSERT INTO "gamestats" ("messes_cleaned", "created_at", "updated_at", "elapsed_time") VALUES (?, ?, ?, ?)[0m  [["messes_cleaned", 50], ["created_at", "2019-10-23 14:42:52.654339"], ["updated_at", "2019-10-23 14:42:52.654339"], ["elapsed_time", "2000-01-01 06:10:00"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m

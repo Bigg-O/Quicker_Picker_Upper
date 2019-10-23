@@ -31,20 +31,25 @@ class Room < ApplicationRecord
 
     def inventory
         inv = Room.all.select { |room| room.name == "Inventory"}.first
-        inv.tools.first.name
     end
 
-    def pick_up
-        #current logged in user goes here.
-        if inventory == "No_tool" && @user.room.tools != "No_tool"
-            inventory.tools.first == @user.room.tools.first
-            @user.room.tools.first == "No_tool"
+    # def room_tools
+    #     self.tools.map { |tool| tool.name }
+    #     #array of all tools in the room
+    # end
+
+
+    def pick_up(tool_picked)
+        inv = Room.all.select { |room| room.name == "Inventory"}.first
+        if inv.length == 0 && self.tools.length != 0
+            inv.tools.first = tool_picked
+            self.tools.delete(tool_picked)
         end
     end
 
     def drop_item
-       self.tools.first == inventory
-       inventory == "No_tool"
+        self.tools << inventory.tools.first
+        inventory.tools.pop
     end
 
 
