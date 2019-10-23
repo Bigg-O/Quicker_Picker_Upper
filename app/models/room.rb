@@ -31,7 +31,7 @@ class Room < ApplicationRecord
 
     def inventory
         inv = Room.all.select { |room| room.name == "Inventory"}.first
-        inv.tools.first
+        inv.tools.first.name
     end
 
     def pick_up
