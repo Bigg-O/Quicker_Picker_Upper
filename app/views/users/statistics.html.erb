@@ -1,3 +1,16 @@
-<h1><%= current_user.user_name %> Statistics </h1>
+<h1><%= current_user.user_name %>'s Statistics </h1>
 
+<h2>Top 5 Cleaners</h2>
+<ol>
+    <% @top_five_messes.each do |game| %>
+    <li><%= game.messes_cleaned %> messes cleaned by <%= game.user.user_name %> </li>
+    <%end%>
+</ol>
+
+<h2>Long Lasting Cleaners</h2>
+<ol>
+    <% @longest_games.each do |game| %>
+        <li><%= game.user.user_name %> lasted <%= game.elapsed_time.strftime("%M:%S") %> </li>
+    <%end%>
+</ol>
 <%= render "/sessions/logout" %>
