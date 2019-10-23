@@ -1,7 +1,8 @@
 class Room < ApplicationRecord
     has_many :roominfos
+    has_many :tools
     has_many :messes, through: :roominfos
-    has_many :tools, through: :roominfos
+  
     def self.fullmess
         # check each room for a mess and return true if all rooms are messy
         if self.all.map {| room| room.messy? }.includes?(false)
@@ -16,4 +17,5 @@ class Room < ApplicationRecord
 
         !self.roominfos.empty?
     end
+
 end
