@@ -1,4 +1,9 @@
 <h1>Main Menu</h1>
 
-<p><%= link_to "Play Game", '/playgame' %></p>
-<p><%= link_to "Show Stats", "/" %></p>
+<%= form_with(url: "/newgame", method: "post" ) do %>
+    <%= submit_tag("Play Game") %>
+<% end %>
+
+<%= form_with(url: statistics_url(current_user), method: "get" ) do %>
+    <%= submit_tag("Show Stats") %>
+<% end %>
