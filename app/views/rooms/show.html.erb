@@ -1,10 +1,11 @@
 <h1><%= @room.name %></h1>
 </br>
 </br>
+number of kids <%= @room.num_of_kids if @room.num_of_kids %>
 <h3>Messes</h3>
 <% @room.messes.each do |mess| %>
     <p>-<%= mess.name %>
-    <% if mess.name != "The Room Is Clean" && Room.inventory.tools.first == mess.tool%>
+    <% if Room.inventory.tools.first == mess.tool%>
         <%= button_to 'Clean', clean_button_path(:id => @room.id, :mess => mess.id), method: :post %>
     <%end%>
 <%end%>

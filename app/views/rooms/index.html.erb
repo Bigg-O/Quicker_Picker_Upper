@@ -1,7 +1,7 @@
 <h1>House View</h1>
-
 <% @rooms.each do |room| %>
     <% if room.name != "Inventory" %>
+    number of kids <%= room.num_of_kids if room.num_of_kids %>
         <p><%= link_to room.name, room %></p>
     <% end %>
 <% end %>

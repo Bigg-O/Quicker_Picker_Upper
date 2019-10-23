@@ -7,6 +7,7 @@ class RoomsController < ApplicationController
     
 
     def newgame
+        Roominfo.destroy_all
         @@playTime = Time.now
         redirect_to action: 'index'
     end
@@ -16,15 +17,15 @@ class RoomsController < ApplicationController
     end
     
     def index
-        # update
-        # gameOver?
+        update
+        gameOver?
         @playTime = @@playTime
         @rooms = Room.all
     end
     
     def show
-        # update
-        # gameOver?
+        update
+        gameOver?
         @playTime = @@playTime
         @room = Room.find(params[:id])
     end
@@ -53,13 +54,15 @@ class RoomsController < ApplicationController
         def timecheck
             # checks the time and returns an integer that is the amount of elapsed 30 second periods
             # stores the current time step in a variable
-            ((Time.now - @@playTime)/30).to_i
+            if Time.now != @@playTime
+                ((Time.now - @@playTime)/15).to_i
+            end
         end
 
         def gameOver?
             elapsed = Time.now - @@playTime
             if Room.gameover?
-                Gamestat.create($current_messes_cleaned, current_user.id, elapsed)
+                Gamestat.create(messes_cleaned: $current_messes_cleaned, user_id: current_user.id, elapsed_time: elapsed)
                 redirect_to gameover_path
             end
         end
