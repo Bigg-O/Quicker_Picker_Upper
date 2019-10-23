@@ -43,12 +43,16 @@ class Room < ApplicationRecord
 
     end
 
-    def self.addkid
+    def self.addKids
         # adds a kid to a random room thats not the inventory
         loop do
             extra_kid_room = Room.all.sample
             if extra_kid_room.name != "inventory"
-                extra_kid_room.num_of_kids += 1
+                if extra_kid_room.num_of_kids
+                    extra_kid_room.num_of_kids += 1
+                else
+                    extra_kid_room.num_of_kids = 1
+                end
                 extra_kid_room.save
                 return true
             end
@@ -57,7 +61,7 @@ class Room < ApplicationRecord
 
     def addmess
         # adds a random mess to a room
-        if self.fullmess
+        if self.fullmess?
             return false
         end
         loop do 
@@ -97,7 +101,7 @@ class Room < ApplicationRecord
     def self.fullmess?
         # check each room for a mess and return true if all rooms are messy
        
-        if self.all.map {| room| room.messy? }.includes?(false)
+        if self.all.map {| room| room.messy? }.include?(false)
             return false
         else 
             return true
@@ -114,12 +118,14 @@ class Room < ApplicationRecord
         # attempts to add messes to all of the rooms.
         #  if a room is full of messes, returns false, meaning game is over
         self.rooms.each do |room| 
-            room.num_of_kids.times do 
-                if rand(1..100) > 50
-                   if !room.addmess
-                    # add mess returns false if the room is full of messes
-                    return false
-                   end
+            if room.num_of_kids
+                room.num_of_kids.times do 
+                    if rand(1..100) > 50
+                    if !room.addmess
+                        # add mess returns false if the room is full of messes
+                        return false
+                    end
+                    end
                 end
             end
         end
