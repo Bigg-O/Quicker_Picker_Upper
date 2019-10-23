@@ -1,8 +1,9 @@
 Login
-<%= form_with model:@user, url:"/login" do |f|%>
+<%= form_with model:@user, url:"/login", method:"post" do |f|%>
     <%= f.label :user_name%>
     <%= f.text_field :user_name%><br>
     <%= f.label :password%>
     <%= f.password_field  :password%><br>
     <%= f.submit"Login" %>
 <% end %>
+
