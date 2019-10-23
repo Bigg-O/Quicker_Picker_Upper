@@ -53,6 +53,10 @@ class Room < ApplicationRecord
         self.save
     end
 
+    def clean_mess
+
+    end
+
     def self.addkid
         # adds a kid to a random room thats not the inventory
         loop do
