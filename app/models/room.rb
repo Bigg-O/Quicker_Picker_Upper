@@ -97,7 +97,7 @@ class Room < ApplicationRecord
     def self.fullmess?
         # check each room for a mess and return true if all rooms are messy
        
-        if self.all.map {| room| room.messy? }.includes?(false)
+        if self.all.map {| room| room.messy? }.include?(false)
             return false
         else 
             return true
