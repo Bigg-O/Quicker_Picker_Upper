@@ -71,7 +71,7 @@ class RoomsController < ApplicationController
             if current_step > @@timeStep
                 (current_step - @@timeStep).times do
                     Room.addKids
-                    if !Room.addmesses
+                    if !Room.add_messes
                         redirect_to gameover_path
                     end
                 end
