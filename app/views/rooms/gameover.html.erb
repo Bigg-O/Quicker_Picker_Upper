@@ -3,7 +3,7 @@
 <h3> Here are your stats:  </h3>
 <ul>
 <li> messes cleaned:<%= @gamestat.messes_cleaned %> </li>
-<li> total time:<%= @gamestat.elapsed_time.strftime("%H:%M:%S") %>  </li>
+<li> total time:<%= @gamestat.elapsed_time %>  </li>
 </ul>
 <%= form_with(url: "/newgame", method: "post" ) do %>
     <%= submit_tag("Try Again") %>
