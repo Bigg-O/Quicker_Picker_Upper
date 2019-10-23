@@ -3,7 +3,6 @@ class Room < ApplicationRecord
     has_many :tools
     has_many :messes, through: :roominfos
 
-
 # would it be better to put tools in Rooms and remove it from roominfos
 # replace "No_tool" with the appropriate tool from tools variable in Room
 # this could easily be done with indexing an array to find what tool is where
@@ -47,9 +46,6 @@ class Room < ApplicationRecord
        inventory == "No_tool"
     end
 
-
-    
-
     def self.addkid
         # adds a kid to a random room thats not the inventory
         loop do
@@ -61,17 +57,18 @@ class Room < ApplicationRecord
             end
         end
     end
+
     def messchance
         # should check the number of kids in the room and return a probability that increases with each kid
 
     end
+
     def addmess
         # adds a random mess to a room
         random_mess = Mess.all.sample
         Roominfo.create(room:self, mess:random_mess)
     end
 
-  
     def self.fullmess
         # check each room for a mess and return true if all rooms are messy
         if self.all.map {| room| room.messy? }.includes?(false)
@@ -80,13 +77,12 @@ class Room < ApplicationRecord
             return true
         end   
     end
+
     def messy?
         # check a single room to see if its messy
         # if a single room has roominfos(.empty? is false), its messy (return true)
 
         !self.roominfos.empty?
     end
-
-
-
+    
 end
