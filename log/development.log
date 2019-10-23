@@ -2359,3 +2359,301 @@ Processing by RoomsController#show as HTML
 Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.7ms | Allocations: 1544)
 
 
+Started GET "/rooms/13" for ::1 at 2019-10-23 10:04:25 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:8:in `show'
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mTool Load (0.2ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ?[0m  [["room_id", 13]]
+  ↳ app/views/rooms/show.html.erb:4
+  Rendered rooms/show.html.erb within layouts/application (Duration: 54.8ms | Allocations: 8274)
+Completed 200 OK in 103ms (Views: 63.6ms | ActiveRecord: 2.7ms | Allocations: 17791)
+
+
+Started GET "/rooms/" for ::1 at 2019-10-23 10:04:27 -0500
+Processing by RoomsController#index as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:3
+  Rendered rooms/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1063)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.2ms | Allocations: 1569)
+
+
+Started GET "/rooms/13" for ::1 at 2019-10-23 10:04:28 -0500
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:8:in `show'
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ?[0m  [["room_id", 13]]
+  ↳ app/views/rooms/show.html.erb:4
+  Rendered rooms/show.html.erb within layouts/application (Duration: 2.9ms | Allocations: 696)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.2ms | Allocations: 1560)
+
+
+Started GET "/rooms/13" for ::1 at 2019-10-23 10:06:49 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:8:in `show'
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mTool Load (0.2ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ?[0m  [["room_id", 13]]
+  ↳ app/views/rooms/show.html.erb:4
+  Rendered rooms/show.html.erb within layouts/application (Duration: 14.0ms | Allocations: 5817)
+Completed 200 OK in 25ms (Views: 14.0ms | ActiveRecord: 2.1ms | Allocations: 12122)
+
+
+Started GET "/rooms/" for ::1 at 2019-10-23 10:06:52 -0500
+Processing by RoomsController#index as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:3
+  Rendered rooms/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 898)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.2ms | Allocations: 1255)
+
+
+Started GET "/rooms/13" for ::1 at 2019-10-23 10:06:53 -0500
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:8:in `show'
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ?[0m  [["room_id", 13]]
+  ↳ app/views/rooms/show.html.erb:4
+  Rendered rooms/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 694)
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.2ms | Allocations: 1544)
+
+
+Started GET "/rooms" for ::1 at 2019-10-23 10:06:54 -0500
+Processing by RoomsController#index as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:3
+  Rendered rooms/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 834)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms | Allocations: 1199)
+
+
+Started GET "/rooms/13" for ::1 at 2019-10-23 10:06:56 -0500
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:8:in `show'
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ?[0m  [["room_id", 13]]
+  ↳ app/views/rooms/show.html.erb:4
+  Rendered rooms/show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 694)
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 1544)
+
+
+Started GET "/rooms" for ::1 at 2019-10-23 10:08:08 -0500
+Processing by RoomsController#index as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:3
+  Rendered rooms/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 969)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.2ms | Allocations: 2182)
+
+
+Started GET "/rooms" for ::1 at 2019-10-23 10:09:29 -0500
+Processing by RoomsController#index as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:3
+  Rendered rooms/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 991)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.3ms | Allocations: 2198)
+
+
+Started GET "/rooms" for ::1 at 2019-10-23 10:11:15 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by RoomsController#index as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:3
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" ORDER BY "rooms"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:11
+  Rendered rooms/index.html.erb within layouts/application (Duration: 8.5ms | Allocations: 5080)
+Completed 200 OK in 16ms (Views: 10.0ms | ActiveRecord: 0.9ms | Allocations: 8147)
+
+
+Started GET "/rooms" for ::1 at 2019-10-23 10:11:19 -0500
+Processing by RoomsController#index as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:3
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" ORDER BY "rooms"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:11
+  Rendered rooms/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1666)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.2ms | Allocations: 2873)
+
+
+Started GET "/rooms/13" for ::1 at 2019-10-23 10:11:20 -0500
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:10:in `show'
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ?[0m  [["room_id", 13]]
+  ↳ app/views/rooms/show.html.erb:4
+  Rendered rooms/show.html.erb within layouts/application (Duration: 9.8ms | Allocations: 6024)
+Completed 200 OK in 13ms (Views: 9.8ms | ActiveRecord: 0.8ms | Allocations: 7127)
+
+
+Started GET "/rooms" for ::1 at 2019-10-23 10:11:29 -0500
+Processing by RoomsController#index as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:3
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" ORDER BY "rooms"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:11
+  Rendered rooms/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1664)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.3ms | Allocations: 2871)
+
+
+Started GET "/rooms" for ::1 at 2019-10-23 10:11:38 -0500
+Processing by RoomsController#index as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:3
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" ORDER BY "rooms"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:11
+  Rendered rooms/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1665)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.2ms | Allocations: 2872)
+
+
+Started GET "/rooms" for ::1 at 2019-10-23 10:11:47 -0500
+Processing by RoomsController#index as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:3
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" ORDER BY "rooms"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:11
+  Rendered rooms/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1812)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.4ms | Allocations: 3019)
+
+
+Started GET "/rooms" for ::1 at 2019-10-23 10:12:08 -0500
+Processing by RoomsController#index as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:3
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" ORDER BY "rooms"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:11
+  [1m[36mTool Load (0.2ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ? ORDER BY "tools"."id" DESC LIMIT ?[0m  [["room_id", 18], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:11
+  Rendered rooms/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 2538)
+Completed 200 OK in 10ms (Views: 7.5ms | ActiveRecord: 0.5ms | Allocations: 3754)
+
+
+Started GET "/rooms" for ::1 at 2019-10-23 10:12:21 -0500
+Processing by RoomsController#index as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:3
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" ORDER BY "rooms"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:11
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ? ORDER BY "tools"."id" DESC LIMIT ?[0m  [["room_id", 18], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:11
+  Rendered rooms/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 2488)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.4ms | Allocations: 3695)
+
+
+Started GET "/rooms/13" for ::1 at 2019-10-23 10:13:23 -0500
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:10:in `show'
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ?[0m  [["room_id", 13]]
+  ↳ app/views/rooms/show.html.erb:4
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" ORDER BY "rooms"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:10
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ? ORDER BY "tools"."id" DESC LIMIT ?[0m  [["room_id", 18], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:10
+  Rendered rooms/show.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2388)
+Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 0.4ms | Allocations: 4089)
+
+
+Started GET "/rooms/13" for ::1 at 2019-10-23 10:13:36 -0500
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:10:in `show'
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ?[0m  [["room_id", 13]]
+  ↳ app/views/rooms/show.html.erb:4
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" ORDER BY "rooms"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:10
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ? ORDER BY "tools"."id" DESC LIMIT ?[0m  [["room_id", 18], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:10
+  Rendered rooms/show.html.erb within layouts/application (Duration: 4.1ms | Allocations: 2390)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.4ms | Allocations: 4090)
+
+
+Started GET "/rooms/13" for ::1 at 2019-10-23 10:14:00 -0500
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:10:in `show'
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mTool Load (0.2ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ?[0m  [["room_id", 13]]
+  ↳ app/views/rooms/show.html.erb:4
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" ORDER BY "rooms"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:10
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ? ORDER BY "tools"."id" DESC LIMIT ?[0m  [["room_id", 18], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:10
+  Rendered rooms/show.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2388)
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 0.6ms | Allocations: 4088)
+
+
+Started GET "/rooms/13" for ::1 at 2019-10-23 10:14:08 -0500
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:10:in `show'
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mTool Load (0.2ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ?[0m  [["room_id", 13]]
+  ↳ app/views/rooms/show.html.erb:4
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" ORDER BY "rooms"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:10
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ? ORDER BY "tools"."id" DESC LIMIT ?[0m  [["room_id", 18], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:10
+  Rendered rooms/show.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2388)
+Completed 200 OK in 11ms (Views: 7.6ms | ActiveRecord: 0.5ms | Allocations: 4088)
+
+
+Started GET "/rooms/13" for ::1 at 2019-10-23 10:14:09 -0500
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:10:in `show'
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ?[0m  [["room_id", 13]]
+  ↳ app/views/rooms/show.html.erb:4
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" ORDER BY "rooms"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:10
+  [1m[36mTool Load (0.2ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ? ORDER BY "tools"."id" DESC LIMIT ?[0m  [["room_id", 18], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:10
+  Rendered rooms/show.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2194)
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 0.5ms | Allocations: 3045)
+
+
+Started GET "/rooms/13" for ::1 at 2019-10-23 10:14:19 -0500
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:10:in `show'
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ?[0m  [["room_id", 13]]
+  ↳ app/views/rooms/show.html.erb:4
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" ORDER BY "rooms"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:10
+  [1m[36mTool Load (0.4ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ? ORDER BY "tools"."id" DESC LIMIT ?[0m  [["room_id", 18], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:10
+  Rendered rooms/show.html.erb within layouts/application (Duration: 6.5ms | Allocations: 2388)
+Completed 200 OK in 11ms (Views: 8.1ms | ActiveRecord: 0.8ms | Allocations: 4088)
+
+

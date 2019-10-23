@@ -1,8 +1,12 @@
 <h1><%= @room.name %></h1>
 
-List of Tools <br>
+Tools in the room <br>
     <% @room.tools.each do |tool| %>
-        <%= tool.name %>
+        <p>- <%= tool.name %></p>
     <% end %>
+
+<h1>Inventory</h1>
+
+<p>You have a <%= Room.all.last.tools.last.name %>.</p>
 
 <p><%= link_to "Back to the House", "/rooms" %></p>
