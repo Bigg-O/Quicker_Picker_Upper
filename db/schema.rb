@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_22_162208) do
+ActiveRecord::Schema.define(version: 2019_10_23_002537) do
 
   create_table "gamestats", force: :cascade do |t|
     t.integer "messes_cleaned"
@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 2019_10_22_162208) do
 
   create_table "roominfos", force: :cascade do |t|
     t.integer "room_id"
-    t.integer "tool_id"
     t.integer "mess_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -39,6 +38,7 @@ ActiveRecord::Schema.define(version: 2019_10_22_162208) do
     t.integer "num_of_kids"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "tool_id"
   end
 
   create_table "tools", force: :cascade do |t|
