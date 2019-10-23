@@ -1,5 +1,11 @@
 <h1>House View</h1>
 
 <% @rooms.each do |room| %>
-    <p><%= link_to room.name, room %></p>
+    <% if room.name != "Inventory" %>
+        <p><%= link_to room.name, room %></p>
+    <% end %>
 <% end %>
+
+<h1>Inventory</h1>
+
+<p>You have a <%= Room.all.last.tools.last.name %>.</p>

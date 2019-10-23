@@ -1911,3 +1911,749 @@ Migrating to AddRoomIdToTools (20191023012426)
   [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  [1m[36mMess Load (0.2ms)[0m  [1m[34mSELECT "messes".* FROM "messes"[0m
+  [1m[36mTool Load (0.2ms)[0m  [1m[34mSELECT "tools".* FROM "tools"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.5ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Living Room"], ["created_at", "2019-10-23 14:49:10.287858"], ["updated_at", "2019-10-23 14:49:10.287858"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.4ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Kitchen"], ["created_at", "2019-10-23 14:49:10.301080"], ["updated_at", "2019-10-23 14:49:10.301080"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.5ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Bedroom"], ["created_at", "2019-10-23 14:49:10.313002"], ["updated_at", "2019-10-23 14:49:10.313002"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.3ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Bathroom"], ["created_at", "2019-10-23 14:49:10.323374"], ["updated_at", "2019-10-23 14:49:10.323374"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.4ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Diningroom"], ["created_at", "2019-10-23 14:49:10.334349"], ["updated_at", "2019-10-23 14:49:10.334349"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.4ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Inventory"], ["created_at", "2019-10-23 14:49:10.347068"], ["updated_at", "2019-10-23 14:49:10.347068"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTool Create (0.3ms)[0m  [1m[32mINSERT INTO "tools" ("name", "created_at", "updated_at", "room_id") VALUES (?, ?, ?, ?)[0m  [["name", "Basket"], ["created_at", "2019-10-23 14:49:10.360760"], ["updated_at", "2019-10-23 14:49:10.360760"], ["room_id", 2]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Destroy (0.4ms)[0m  [1m[31mDELETE FROM "rooms" WHERE "rooms"."id" = ?[0m  [["id", 1]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Destroy (0.3ms)[0m  [1m[31mDELETE FROM "rooms" WHERE "rooms"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Destroy (0.3ms)[0m  [1m[31mDELETE FROM "rooms" WHERE "rooms"."id" = ?[0m  [["id", 3]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Destroy (0.3ms)[0m  [1m[31mDELETE FROM "rooms" WHERE "rooms"."id" = ?[0m  [["id", 4]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Destroy (0.3ms)[0m  [1m[31mDELETE FROM "rooms" WHERE "rooms"."id" = ?[0m  [["id", 5]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Destroy (0.3ms)[0m  [1m[31mDELETE FROM "rooms" WHERE "rooms"."id" = ?[0m  [["id", 6]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMess Load (0.2ms)[0m  [1m[34mSELECT "messes".* FROM "messes"[0m
+  [1m[36mTool Load (0.2ms)[0m  [1m[34mSELECT "tools".* FROM "tools"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTool Destroy (0.4ms)[0m  [1m[31mDELETE FROM "tools" WHERE "tools"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.3ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Living Room"], ["created_at", "2019-10-23 14:49:47.148425"], ["updated_at", "2019-10-23 14:49:47.148425"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.3ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Kitchen"], ["created_at", "2019-10-23 14:49:47.152488"], ["updated_at", "2019-10-23 14:49:47.152488"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.3ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Bedroom"], ["created_at", "2019-10-23 14:49:47.156513"], ["updated_at", "2019-10-23 14:49:47.156513"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.4ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Bathroom"], ["created_at", "2019-10-23 14:49:47.161095"], ["updated_at", "2019-10-23 14:49:47.161095"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.3ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Diningroom"], ["created_at", "2019-10-23 14:49:47.165849"], ["updated_at", "2019-10-23 14:49:47.165849"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.4ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Inventory"], ["created_at", "2019-10-23 14:49:47.169885"], ["updated_at", "2019-10-23 14:49:47.169885"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTool Create (0.3ms)[0m  [1m[32mINSERT INTO "tools" ("name", "created_at", "updated_at", "room_id") VALUES (?, ?, ?, ?)[0m  [["name", "Basket"], ["created_at", "2019-10-23 14:49:47.181086"], ["updated_at", "2019-10-23 14:49:47.181086"], ["room_id", 8]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Destroy (0.4ms)[0m  [1m[31mDELETE FROM "rooms" WHERE "rooms"."id" = ?[0m  [["id", 7]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Destroy (0.3ms)[0m  [1m[31mDELETE FROM "rooms" WHERE "rooms"."id" = ?[0m  [["id", 8]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Destroy (0.3ms)[0m  [1m[31mDELETE FROM "rooms" WHERE "rooms"."id" = ?[0m  [["id", 9]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Destroy (0.3ms)[0m  [1m[31mDELETE FROM "rooms" WHERE "rooms"."id" = ?[0m  [["id", 10]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Destroy (0.3ms)[0m  [1m[31mDELETE FROM "rooms" WHERE "rooms"."id" = ?[0m  [["id", 11]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Destroy (0.3ms)[0m  [1m[31mDELETE FROM "rooms" WHERE "rooms"."id" = ?[0m  [["id", 12]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMess Load (0.2ms)[0m  [1m[34mSELECT "messes".* FROM "messes"[0m
+  [1m[36mTool Load (0.2ms)[0m  [1m[34mSELECT "tools".* FROM "tools"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTool Destroy (0.4ms)[0m  [1m[31mDELETE FROM "tools" WHERE "tools"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.3ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Living Room"], ["created_at", "2019-10-23 14:50:13.844924"], ["updated_at", "2019-10-23 14:50:13.844924"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.3ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Kitchen"], ["created_at", "2019-10-23 14:50:13.849299"], ["updated_at", "2019-10-23 14:50:13.849299"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.3ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Bedroom"], ["created_at", "2019-10-23 14:50:13.853314"], ["updated_at", "2019-10-23 14:50:13.853314"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.3ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Bathroom"], ["created_at", "2019-10-23 14:50:13.858231"], ["updated_at", "2019-10-23 14:50:13.858231"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.4ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Diningroom"], ["created_at", "2019-10-23 14:50:13.868181"], ["updated_at", "2019-10-23 14:50:13.868181"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.3ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Inventory"], ["created_at", "2019-10-23 14:50:13.872076"], ["updated_at", "2019-10-23 14:50:13.872076"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTool Create (0.3ms)[0m  [1m[32mINSERT INTO "tools" ("name", "created_at", "updated_at", "room_id") VALUES (?, ?, ?, ?)[0m  [["name", "Basket"], ["created_at", "2019-10-23 14:50:13.877218"], ["updated_at", "2019-10-23 14:50:13.877218"], ["room_id", 14]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTool Create (0.3ms)[0m  [1m[32mINSERT INTO "tools" ("name", "created_at", "updated_at", "room_id") VALUES (?, ?, ?, ?)[0m  [["name", "Vaccuum"], ["created_at", "2019-10-23 14:50:13.881467"], ["updated_at", "2019-10-23 14:50:13.881467"], ["room_id", 13]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTool Create (0.3ms)[0m  [1m[32mINSERT INTO "tools" ("name", "created_at", "updated_at", "room_id") VALUES (?, ?, ?, ?)[0m  [["name", "Cloth"], ["created_at", "2019-10-23 14:50:13.885259"], ["updated_at", "2019-10-23 14:50:13.885259"], ["room_id", 15]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTool Create (0.3ms)[0m  [1m[32mINSERT INTO "tools" ("name", "created_at", "updated_at", "room_id") VALUES (?, ?, ?, ?)[0m  [["name", "Mop"], ["created_at", "2019-10-23 14:50:13.889302"], ["updated_at", "2019-10-23 14:50:13.889302"], ["room_id", 18]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMess Create (0.3ms)[0m  [1m[32mINSERT INTO "messes" ("created_at", "updated_at", "name") VALUES (?, ?, ?)[0m  [["created_at", "2019-10-23 14:50:13.895985"], ["updated_at", "2019-10-23 14:50:13.895985"], ["name", "Toy Spill"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMess Create (0.2ms)[0m  [1m[32mINSERT INTO "messes" ("created_at", "updated_at", "name") VALUES (?, ?, ?)[0m  [["created_at", "2019-10-23 14:50:13.899441"], ["updated_at", "2019-10-23 14:50:13.899441"], ["name", "Snack Spill"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMess Create (0.3ms)[0m  [1m[32mINSERT INTO "messes" ("created_at", "updated_at", "name") VALUES (?, ?, ?)[0m  [["created_at", "2019-10-23 14:50:13.903158"], ["updated_at", "2019-10-23 14:50:13.903158"], ["name", "Drawing on the Wall"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMess Create (0.3ms)[0m  [1m[32mINSERT INTO "messes" ("created_at", "updated_at", "name") VALUES (?, ?, ?)[0m  [["created_at", "2019-10-23 14:50:13.906390"], ["updated_at", "2019-10-23 14:50:13.906390"], ["name", "Juice Spill"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMess Create (0.3ms)[0m  [1m[32mINSERT INTO "messes" ("created_at", "updated_at", "name") VALUES (?, ?, ?)[0m  [["created_at", "2019-10-23 14:50:13.909988"], ["updated_at", "2019-10-23 14:50:13.909988"], ["name", "No_mess"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "Mr. Clean"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_name", "Mr. Clean"], ["password_digest", "$2a$12$P8yA61KT3.KmrpAbu5B0luLFW1bCJyOY6cjVmG/rhR4Wj2e7EC.um"], ["created_at", "2019-10-23 14:50:14.187785"], ["updated_at", "2019-10-23 14:50:14.187785"]]
+  [1m[35m (8.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "Queen of Clean"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_name", "Queen of Clean"], ["password_digest", "$2a$12$HFLOrcogyXuj.ifJbl3dcewGNmhGpHGcjSYJiF.V4wQ2cweDvxkv2"], ["created_at", "2019-10-23 14:50:14.466874"], ["updated_at", "2019-10-23 14:50:14.466874"]]
+  [1m[35m (9.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "Average Joe"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_name", "Average Joe"], ["password_digest", "$2a$12$hPeL1Gsi.kJmrmF1jP6yTuD/G6cs4Y8hoheSeA.1nttoU1vc74bjy"], ["created_at", "2019-10-23 14:50:14.776369"], ["updated_at", "2019-10-23 14:50:14.776369"]]
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "Subpar Steve"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_name", "Subpar Steve"], ["password_digest", "$2a$12$wyRRDE6HmGn2WhRhjq5HY.2RytoKWiOt3JaJgtEMQLmuGTb9j0Sda"], ["created_at", "2019-10-23 14:50:15.058401"], ["updated_at", "2019-10-23 14:50:15.058401"]]
+  [1m[35m (9.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "Dirty Dude"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_name", "Dirty Dude"], ["password_digest", "$2a$12$UjuLI.irjudl5HIusBEKOejgWvtLjKaomdvKxh0Jg8noh7YK9t87q"], ["created_at", "2019-10-23 14:50:15.340851"], ["updated_at", "2019-10-23 14:50:15.340851"]]
+  [1m[35m (9.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGamestat Create (0.4ms)[0m  [1m[32mINSERT INTO "gamestats" ("messes_cleaned", "user_id", "created_at", "updated_at", "elapsed_time") VALUES (?, ?, ?, ?, ?)[0m  [["messes_cleaned", 250], ["user_id", 9], ["created_at", "2019-10-23 14:50:15.363388"], ["updated_at", "2019-10-23 14:50:15.363388"], ["elapsed_time", "2000-01-01 06:45:00"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGamestat Create (0.3ms)[0m  [1m[32mINSERT INTO "gamestats" ("messes_cleaned", "user_id", "created_at", "updated_at", "elapsed_time") VALUES (?, ?, ?, ?, ?)[0m  [["messes_cleaned", 200], ["user_id", 8], ["created_at", "2019-10-23 14:50:15.367931"], ["updated_at", "2019-10-23 14:50:15.367931"], ["elapsed_time", "2000-01-01 06:30:00"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGamestat Create (0.3ms)[0m  [1m[32mINSERT INTO "gamestats" ("messes_cleaned", "user_id", "created_at", "updated_at", "elapsed_time") VALUES (?, ?, ?, ?, ?)[0m  [["messes_cleaned", 150], ["user_id", 10], ["created_at", "2019-10-23 14:50:15.372117"], ["updated_at", "2019-10-23 14:50:15.372117"], ["elapsed_time", "2000-01-01 06:20:00"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGamestat Create (0.3ms)[0m  [1m[32mINSERT INTO "gamestats" ("messes_cleaned", "user_id", "created_at", "updated_at", "elapsed_time") VALUES (?, ?, ?, ?, ?)[0m  [["messes_cleaned", 100], ["user_id", 11], ["created_at", "2019-10-23 14:50:15.376330"], ["updated_at", "2019-10-23 14:50:15.376330"], ["elapsed_time", "2000-01-01 06:15:00"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGamestat Create (0.3ms)[0m  [1m[32mINSERT INTO "gamestats" ("messes_cleaned", "user_id", "created_at", "updated_at", "elapsed_time") VALUES (?, ?, ?, ?, ?)[0m  [["messes_cleaned", 50], ["user_id", 12], ["created_at", "2019-10-23 14:50:15.380601"], ["updated_at", "2019-10-23 14:50:15.380601"], ["elapsed_time", "2000-01-01 06:10:00"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoominfo Create (0.4ms)[0m  [1m[32mINSERT INTO "roominfos" ("room_id", "mess_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["room_id", 13], ["mess_id", 5], ["created_at", "2019-10-23 14:50:15.392450"], ["updated_at", "2019-10-23 14:50:15.392450"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoominfo Create (0.3ms)[0m  [1m[32mINSERT INTO "roominfos" ("room_id", "mess_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["room_id", 14], ["mess_id", 5], ["created_at", "2019-10-23 14:50:15.396804"], ["updated_at", "2019-10-23 14:50:15.396804"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoominfo Create (0.3ms)[0m  [1m[32mINSERT INTO "roominfos" ("room_id", "mess_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["room_id", 15], ["mess_id", 5], ["created_at", "2019-10-23 14:50:15.400808"], ["updated_at", "2019-10-23 14:50:15.400808"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoominfo Create (0.5ms)[0m  [1m[32mINSERT INTO "roominfos" ("room_id", "mess_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["room_id", 16], ["mess_id", 5], ["created_at", "2019-10-23 14:50:15.404639"], ["updated_at", "2019-10-23 14:50:15.404639"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoominfo Create (0.3ms)[0m  [1m[32mINSERT INTO "roominfos" ("room_id", "mess_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["room_id", 17], ["mess_id", 5], ["created_at", "2019-10-23 14:50:15.411079"], ["updated_at", "2019-10-23 14:50:15.411079"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoominfo Create (0.3ms)[0m  [1m[32mINSERT INTO "roominfos" ("room_id", "mess_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["room_id", 18], ["mess_id", 5], ["created_at", "2019-10-23 14:50:15.415528"], ["updated_at", "2019-10-23 14:50:15.415528"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/rooms" for ::1 at 2019-10-23 09:52:03 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#index as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:3
+  Rendered rooms/index.html.erb within layouts/application (Duration: 21.7ms | Allocations: 4603)
+Completed 200 OK in 75ms (Views: 44.4ms | ActiveRecord: 1.4ms | Allocations: 8892)
+
+
+Started GET "/rooms/13" for ::1 at 2019-10-23 09:52:04 -0500
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:15:in `show'
+  [1m[36mTool Load (0.2ms)[0m  [1m[34mSELECT "tools".* FROM "tools"[0m
+  ↳ app/controllers/rooms_controller.rb:16:in `show'
+  [1m[36mRoominfo Load (0.4ms)[0m  [1m[34mSELECT "roominfos".* FROM "roominfos" WHERE "roominfos"."tool_id" = ? LIMIT ?[0m  [["tool_id", 3], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 1.1ms | Allocations: 12255)
+
+
+  [1m[36mRoominfo Load (0.3ms)[0m  [1m[34mSELECT "roominfos".* FROM "roominfos" WHERE "roominfos"."tool_id" = ? LIMIT ?[0m  [["tool_id", 3], ["LIMIT", 11]]
+  
+NoMethodError (undefined method `room_id' for #<Roominfo::ActiveRecord_Associations_CollectionProxy:0x00007f88bb04a740>):
+  
+app/controllers/rooms_controller.rb:16:in `block in show'
+app/controllers/rooms_controller.rb:16:in `show'
+Started GET "/rooms/14" for ::1 at 2019-10-23 09:52:08 -0500
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:15:in `show'
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools"[0m
+  ↳ app/controllers/rooms_controller.rb:16:in `show'
+  [1m[36mRoominfo Load (0.4ms)[0m  [1m[34mSELECT "roominfos".* FROM "roominfos" WHERE "roominfos"."tool_id" = ? LIMIT ?[0m  [["tool_id", 3], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.3ms | Allocations: 4816)
+
+
+  [1m[36mRoominfo Load (0.3ms)[0m  [1m[34mSELECT "roominfos".* FROM "roominfos" WHERE "roominfos"."tool_id" = ? LIMIT ?[0m  [["tool_id", 3], ["LIMIT", 11]]
+  
+NoMethodError (undefined method `room_id' for #<Roominfo::ActiveRecord_Associations_CollectionProxy:0x00007f88b9528110>):
+  
+app/controllers/rooms_controller.rb:16:in `block in show'
+app/controllers/rooms_controller.rb:16:in `show'
+Started GET "/rooms/13" for ::1 at 2019-10-23 09:52:26 -0500
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:15:in `show'
+  [1m[36mTool Load (0.2ms)[0m  [1m[34mSELECT "tools".* FROM "tools"[0m
+  ↳ app/controllers/rooms_controller.rb:16:in `show'
+  [1m[36mRoominfo Load (0.4ms)[0m  [1m[34mSELECT "roominfos".* FROM "roominfos" WHERE "roominfos"."tool_id" = ? LIMIT ?[0m  [["tool_id", 3], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.4ms | Allocations: 4764)
+
+
+  [1m[36mRoominfo Load (0.4ms)[0m  [1m[34mSELECT "roominfos".* FROM "roominfos" WHERE "roominfos"."tool_id" = ? LIMIT ?[0m  [["tool_id", 3], ["LIMIT", 11]]
+  
+NoMethodError (undefined method `room_id' for #<Roominfo::ActiveRecord_Associations_CollectionProxy:0x00007f88b9472040>):
+  
+app/controllers/rooms_controller.rb:16:in `block in show'
+app/controllers/rooms_controller.rb:16:in `show'
+Started GET "/rooms/13" for ::1 at 2019-10-23 09:57:13 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:8:in `show'
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ?[0m  [["room_id", 13]]
+  ↳ app/views/rooms/show.html.erb:4
+  Rendered rooms/show.html.erb within layouts/application (Duration: 8.6ms | Allocations: 6293)
+Completed 200 OK in 20ms (Views: 10.0ms | ActiveRecord: 1.2ms | Allocations: 13296)
+
+
+Started GET "/rooms/13" for ::1 at 2019-10-23 09:57:19 -0500
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:8:in `show'
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mTool Load (0.2ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ?[0m  [["room_id", 13]]
+  ↳ app/views/rooms/show.html.erb:4
+  Rendered rooms/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 874)
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.3ms | Allocations: 2588)
+
+
+Started GET "/rooms/13" for ::1 at 2019-10-23 09:57:24 -0500
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:8:in `show'
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ?[0m  [["room_id", 13]]
+  ↳ app/views/rooms/show.html.erb:4
+  Rendered rooms/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 871)
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 0.3ms | Allocations: 2571)
+
+
+Started GET "/rooms/13" for ::1 at 2019-10-23 09:57:34 -0500
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:8:in `show'
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ?[0m  [["room_id", 13]]
+  ↳ app/views/rooms/show.html.erb:4
+  Rendered rooms/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 695)
+Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 0.4ms | Allocations: 1546)
+
+
+Started GET "/rooms/14" for ::1 at 2019-10-23 09:57:36 -0500
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:8:in `show'
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ?[0m  [["room_id", 14]]
+  ↳ app/views/rooms/show.html.erb:4
+  Rendered rooms/show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 694)
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 1544)
+
+
+Started GET "/rooms/15" for ::1 at 2019-10-23 09:57:39 -0500
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:8:in `show'
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ?[0m  [["room_id", 15]]
+  ↳ app/views/rooms/show.html.erb:4
+  Rendered rooms/show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 694)
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.2ms | Allocations: 1544)
+
+
+Started GET "/rooms/16" for ::1 at 2019-10-23 09:57:41 -0500
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:8:in `show'
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ?[0m  [["room_id", 16]]
+  ↳ app/views/rooms/show.html.erb:4
+  Rendered rooms/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 675)
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 1525)
+
+
+Started GET "/rooms/17" for ::1 at 2019-10-23 09:57:43 -0500
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:8:in `show'
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ?[0m  [["room_id", 17]]
+  ↳ app/views/rooms/show.html.erb:4
+  Rendered rooms/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 675)
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 1525)
+
+
+Started GET "/rooms/18" for ::1 at 2019-10-23 09:57:45 -0500
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:8:in `show'
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ?[0m  [["room_id", 18]]
+  ↳ app/views/rooms/show.html.erb:4
+  Rendered rooms/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 694)
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.3ms | Allocations: 1544)
+
+
+Started GET "/rooms/13" for ::1 at 2019-10-23 09:57:54 -0500
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:8:in `show'
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ?[0m  [["room_id", 13]]
+  ↳ app/views/rooms/show.html.erb:4
+  Rendered rooms/show.html.erb within layouts/application (Duration: 2.1ms | Allocations: 871)
+Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 0.3ms | Allocations: 2571)
+
+
+Started GET "/rooms/14" for ::1 at 2019-10-23 09:57:56 -0500
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:8:in `show'
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ?[0m  [["room_id", 14]]
+  ↳ app/views/rooms/show.html.erb:4
+  Rendered rooms/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 695)
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.3ms | Allocations: 1546)
+
+
+Started GET "/rooms/15" for ::1 at 2019-10-23 09:57:58 -0500
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:8:in `show'
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ?[0m  [["room_id", 15]]
+  ↳ app/views/rooms/show.html.erb:4
+  Rendered rooms/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 694)
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.3ms | Allocations: 1544)
+
+
+Started GET "/rooms/16" for ::1 at 2019-10-23 09:58:00 -0500
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:8:in `show'
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ?[0m  [["room_id", 16]]
+  ↳ app/views/rooms/show.html.erb:4
+  Rendered rooms/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 675)
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 1525)
+
+
+Started GET "/rooms/17" for ::1 at 2019-10-23 09:58:02 -0500
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:8:in `show'
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ?[0m  [["room_id", 17]]
+  ↳ app/views/rooms/show.html.erb:4
+  Rendered rooms/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 675)
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.3ms | Allocations: 1525)
+
+
+Started GET "/rooms/18" for ::1 at 2019-10-23 09:58:05 -0500
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:8:in `show'
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ?[0m  [["room_id", 18]]
+  ↳ app/views/rooms/show.html.erb:4
+  Rendered rooms/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 694)
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.7ms | Allocations: 1544)
+
+
+Started GET "/rooms/13" for ::1 at 2019-10-23 10:04:25 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:8:in `show'
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mTool Load (0.2ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ?[0m  [["room_id", 13]]
+  ↳ app/views/rooms/show.html.erb:4
+  Rendered rooms/show.html.erb within layouts/application (Duration: 54.8ms | Allocations: 8274)
+Completed 200 OK in 103ms (Views: 63.6ms | ActiveRecord: 2.7ms | Allocations: 17791)
+
+
+Started GET "/rooms/" for ::1 at 2019-10-23 10:04:27 -0500
+Processing by RoomsController#index as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:3
+  Rendered rooms/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1063)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.2ms | Allocations: 1569)
+
+
+Started GET "/rooms/13" for ::1 at 2019-10-23 10:04:28 -0500
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:8:in `show'
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ?[0m  [["room_id", 13]]
+  ↳ app/views/rooms/show.html.erb:4
+  Rendered rooms/show.html.erb within layouts/application (Duration: 2.9ms | Allocations: 696)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.2ms | Allocations: 1560)
+
+
+Started GET "/rooms/13" for ::1 at 2019-10-23 10:06:49 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:8:in `show'
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mTool Load (0.2ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ?[0m  [["room_id", 13]]
+  ↳ app/views/rooms/show.html.erb:4
+  Rendered rooms/show.html.erb within layouts/application (Duration: 14.0ms | Allocations: 5817)
+Completed 200 OK in 25ms (Views: 14.0ms | ActiveRecord: 2.1ms | Allocations: 12122)
+
+
+Started GET "/rooms/" for ::1 at 2019-10-23 10:06:52 -0500
+Processing by RoomsController#index as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:3
+  Rendered rooms/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 898)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.2ms | Allocations: 1255)
+
+
+Started GET "/rooms/13" for ::1 at 2019-10-23 10:06:53 -0500
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:8:in `show'
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ?[0m  [["room_id", 13]]
+  ↳ app/views/rooms/show.html.erb:4
+  Rendered rooms/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 694)
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.2ms | Allocations: 1544)
+
+
+Started GET "/rooms" for ::1 at 2019-10-23 10:06:54 -0500
+Processing by RoomsController#index as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:3
+  Rendered rooms/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 834)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms | Allocations: 1199)
+
+
+Started GET "/rooms/13" for ::1 at 2019-10-23 10:06:56 -0500
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:8:in `show'
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ?[0m  [["room_id", 13]]
+  ↳ app/views/rooms/show.html.erb:4
+  Rendered rooms/show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 694)
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 1544)
+
+
+Started GET "/rooms" for ::1 at 2019-10-23 10:08:08 -0500
+Processing by RoomsController#index as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:3
+  Rendered rooms/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 969)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.2ms | Allocations: 2182)
+
+
+Started GET "/rooms" for ::1 at 2019-10-23 10:09:29 -0500
+Processing by RoomsController#index as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:3
+  Rendered rooms/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 991)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.3ms | Allocations: 2198)
+
+
+Started GET "/rooms" for ::1 at 2019-10-23 10:11:15 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by RoomsController#index as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:3
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" ORDER BY "rooms"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:11
+  Rendered rooms/index.html.erb within layouts/application (Duration: 8.5ms | Allocations: 5080)
+Completed 200 OK in 16ms (Views: 10.0ms | ActiveRecord: 0.9ms | Allocations: 8147)
+
+
+Started GET "/rooms" for ::1 at 2019-10-23 10:11:19 -0500
+Processing by RoomsController#index as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:3
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" ORDER BY "rooms"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:11
+  Rendered rooms/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1666)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.2ms | Allocations: 2873)
+
+
+Started GET "/rooms/13" for ::1 at 2019-10-23 10:11:20 -0500
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:10:in `show'
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ?[0m  [["room_id", 13]]
+  ↳ app/views/rooms/show.html.erb:4
+  Rendered rooms/show.html.erb within layouts/application (Duration: 9.8ms | Allocations: 6024)
+Completed 200 OK in 13ms (Views: 9.8ms | ActiveRecord: 0.8ms | Allocations: 7127)
+
+
+Started GET "/rooms" for ::1 at 2019-10-23 10:11:29 -0500
+Processing by RoomsController#index as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:3
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" ORDER BY "rooms"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:11
+  Rendered rooms/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1664)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.3ms | Allocations: 2871)
+
+
+Started GET "/rooms" for ::1 at 2019-10-23 10:11:38 -0500
+Processing by RoomsController#index as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:3
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" ORDER BY "rooms"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:11
+  Rendered rooms/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1665)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.2ms | Allocations: 2872)
+
+
+Started GET "/rooms" for ::1 at 2019-10-23 10:11:47 -0500
+Processing by RoomsController#index as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:3
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" ORDER BY "rooms"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:11
+  Rendered rooms/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1812)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.4ms | Allocations: 3019)
+
+
+Started GET "/rooms" for ::1 at 2019-10-23 10:12:08 -0500
+Processing by RoomsController#index as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:3
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" ORDER BY "rooms"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:11
+  [1m[36mTool Load (0.2ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ? ORDER BY "tools"."id" DESC LIMIT ?[0m  [["room_id", 18], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:11
+  Rendered rooms/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 2538)
+Completed 200 OK in 10ms (Views: 7.5ms | ActiveRecord: 0.5ms | Allocations: 3754)
+
+
+Started GET "/rooms" for ::1 at 2019-10-23 10:12:21 -0500
+Processing by RoomsController#index as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:3
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" ORDER BY "rooms"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:11
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ? ORDER BY "tools"."id" DESC LIMIT ?[0m  [["room_id", 18], ["LIMIT", 1]]
+  ↳ app/views/rooms/index.html.erb:11
+  Rendered rooms/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 2488)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.4ms | Allocations: 3695)
+
+
+Started GET "/rooms/13" for ::1 at 2019-10-23 10:13:23 -0500
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:10:in `show'
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ?[0m  [["room_id", 13]]
+  ↳ app/views/rooms/show.html.erb:4
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" ORDER BY "rooms"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:10
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ? ORDER BY "tools"."id" DESC LIMIT ?[0m  [["room_id", 18], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:10
+  Rendered rooms/show.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2388)
+Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 0.4ms | Allocations: 4089)
+
+
+Started GET "/rooms/13" for ::1 at 2019-10-23 10:13:36 -0500
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:10:in `show'
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ?[0m  [["room_id", 13]]
+  ↳ app/views/rooms/show.html.erb:4
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" ORDER BY "rooms"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:10
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ? ORDER BY "tools"."id" DESC LIMIT ?[0m  [["room_id", 18], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:10
+  Rendered rooms/show.html.erb within layouts/application (Duration: 4.1ms | Allocations: 2390)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.4ms | Allocations: 4090)
+
+
+Started GET "/rooms/13" for ::1 at 2019-10-23 10:14:00 -0500
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:10:in `show'
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mTool Load (0.2ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ?[0m  [["room_id", 13]]
+  ↳ app/views/rooms/show.html.erb:4
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" ORDER BY "rooms"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:10
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ? ORDER BY "tools"."id" DESC LIMIT ?[0m  [["room_id", 18], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:10
+  Rendered rooms/show.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2388)
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 0.6ms | Allocations: 4088)
+
+
+Started GET "/rooms/13" for ::1 at 2019-10-23 10:14:08 -0500
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:10:in `show'
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mTool Load (0.2ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ?[0m  [["room_id", 13]]
+  ↳ app/views/rooms/show.html.erb:4
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" ORDER BY "rooms"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:10
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ? ORDER BY "tools"."id" DESC LIMIT ?[0m  [["room_id", 18], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:10
+  Rendered rooms/show.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2388)
+Completed 200 OK in 11ms (Views: 7.6ms | ActiveRecord: 0.5ms | Allocations: 4088)
+
+
+Started GET "/rooms/13" for ::1 at 2019-10-23 10:14:09 -0500
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:10:in `show'
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ?[0m  [["room_id", 13]]
+  ↳ app/views/rooms/show.html.erb:4
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" ORDER BY "rooms"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:10
+  [1m[36mTool Load (0.2ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ? ORDER BY "tools"."id" DESC LIMIT ?[0m  [["room_id", 18], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:10
+  Rendered rooms/show.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2194)
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 0.5ms | Allocations: 3045)
+
+
+Started GET "/rooms/13" for ::1 at 2019-10-23 10:14:19 -0500
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:10:in `show'
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ?[0m  [["room_id", 13]]
+  ↳ app/views/rooms/show.html.erb:4
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" ORDER BY "rooms"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:10
+  [1m[36mTool Load (0.4ms)[0m  [1m[34mSELECT "tools".* FROM "tools" WHERE "tools"."room_id" = ? ORDER BY "tools"."id" DESC LIMIT ?[0m  [["room_id", 18], ["LIMIT", 1]]
+  ↳ app/views/rooms/show.html.erb:10
+  Rendered rooms/show.html.erb within layouts/application (Duration: 6.5ms | Allocations: 2388)
+Completed 200 OK in 11ms (Views: 8.1ms | ActiveRecord: 0.8ms | Allocations: 4088)
+
+
