@@ -31,11 +31,13 @@ Gamestat.create( messes_cleaned: 150, user: averagejoe, elapsed_time: Time.parse
 Gamestat.create( messes_cleaned: 100, user: subpar, elapsed_time: Time.parse("00:15:00"))
 Gamestat.create( messes_cleaned: 50, user: dirtydude, elapsed_time: Time.parse("00:10:00"))
 
+
 Roominfo.create(room: livingroom, mess: no_mess)
 Roominfo.create(room: kitchen, mess: no_mess)
 Roominfo.create(room: bedroom, mess: no_mess)
 Roominfo.create(room: bathroom, mess: no_mess)
 Roominfo.create(room: diningroom, mess: no_mess)
 Roominfo.create(room: inventory, mess: no_mess)
+
 
 
