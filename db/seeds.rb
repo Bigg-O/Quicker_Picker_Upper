@@ -43,3 +43,4 @@ Roominfo.create(room_id: bathroom, mess_id: no_mess)
 Roominfo.create(room_id: diningroom, mess_id: no_mess)
 Roominfo.create(room_id: inventory, mess_id: no_mess)
 
+
