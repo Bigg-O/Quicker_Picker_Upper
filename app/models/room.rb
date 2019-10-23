@@ -4,6 +4,11 @@ class Room < ApplicationRecord
     has_many :messes, through: :roominfos
 
 
+    def self.rooms
+        Room.all.select{|room| room.name != 'Inventory'}
+    end
+
+
     def self.inventory
         inv = Room.all.select { |room| room.name == "Inventory"}.first
     end
@@ -50,31 +55,77 @@ class Room < ApplicationRecord
         end
     end
 
-    def messchance
-        # should check the number of kids in the room and return a probability that increases with each kid
-
-    end
-
     def addmess
         # adds a random mess to a room
-        random_mess = Mess.all.sample
-        Roominfo.create(room:self, mess:random_mess)
+        if self.fullmess
+            return false
+        end
+        loop do 
+            random_mess = Mess.all.sample
+            if !self.messes.include?(random_mess)
+                Roominfo.create(room:self, mess:random_mess)
+                return true
+            end
+        end
     end
 
-    def self.fullmess
+    
+
+    def self.gameover?
+        # returns true if all rooms are messy => self.fullmess?
+        # or if one room has all messes
+        self.rooms.each do |room| 
+           if room.fullmess?
+                return true
+           end
+        end
+        if self.fullmess?
+            return true
+        end
+        return false
+    end
+
+    def fullmess?
+        # checks a room to see if it has all the messes
+        if self.messes.count == 4
+            return true
+        else
+            return false
+        end
+    end
+
+    def self.fullmess?
         # check each room for a mess and return true if all rooms are messy
+       
         if self.all.map {| room| room.messy? }.includes?(false)
             return false
         else 
             return true
         end   
     end
-
+    
     def messy?
         # check a single room to see if its messy
-        # if a single room has roominfos(.empty? is false), its messy (return true)
-
+        # if a single room has roominfos (.empty? is false), its messy (return true)
         !self.roominfos.empty?
     end
+
+    def self.add_messes
+        # attempts to add messes to all of the rooms.
+        #  if a room is full of messes, returns false, meaning game is over
+        self.rooms.each do |room| 
+            room.num_of_kids.times do 
+                if rand(1..100) > 50
+                   if !room.addmess
+                    # add mess returns false if the room is full of messes
+                    return false
+                   end
+                end
+            end
+        end
+        return true
+    end
+
+   
     
 end

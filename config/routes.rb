@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :rooms
   resources :users
+  get '/main' => 'rooms#main'
+  get '/playgame' => 'rooms#playgame'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   post '/logout' => 'sessions#destroy'
