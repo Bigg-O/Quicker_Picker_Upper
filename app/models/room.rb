@@ -3,30 +3,6 @@ class Room < ApplicationRecord
     has_many :tools
     has_many :messes, through: :roominfos
 
-# would it be better to put tools in Rooms and remove it from roominfos
-# replace "No_tool" with the appropriate tool from tools variable in Room
-# this could easily be done with indexing an array to find what tool is where
-
-
-# To do this with the ways described below 
-
-# find toolinfo associated with room instance the logged in user is in
-#   Global variables might be neeeded for this.
-
-# pick_up
-#   hold that tool in a method variable and delete roominfos for current room
-#   the user is in and create new roominfos with that tool for the room
-
-# drop_item
-#   hold that tool in a method variable then create a new roominfos with..
-#   that tool and the correct mess.
-#   Then delete roominfos for inventory and create a new roominfos with..
-#   the no_tool instance.
-
-
-#  it might be possible to replace the roominfos with the correct tools
-#   the mess would need to be replaced or added to instead of destroyed
-#   and created
 
     def self.inventory
         inv = Room.all.select { |room| room.name == "Inventory"}.first
@@ -53,7 +29,12 @@ class Room < ApplicationRecord
         self.save
     end
 
-    def clean_mess
+    def clean_mess(mess_to_clean)
+        puts mess_to_clean
+        if Room.inventory.tools.first == mess_to_clean.tool
+            self.mess.delete(mess)
+            self.save
+        end
 
     end
 

@@ -30,7 +30,8 @@ class RoomsController < ApplicationController
     end
 
     def clean_button
-
+        @room = Room.find(params[:id])
+        @room.clean_mess(params[:mess])
     end
 
 

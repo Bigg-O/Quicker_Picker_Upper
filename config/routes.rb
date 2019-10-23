@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   post '/newgame', to: 'rooms#newgame', as: 'newgame'
   post '/drop_button', to: 'rooms#drop_button', as: 'drop_button'
   post '/pick_up_button', to: 'rooms#pick_up_button', as: 'pick_up_button'
+  post '/clean_button', to: 'rooms#clean_button', as: 'clean_button'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
