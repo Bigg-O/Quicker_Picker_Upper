@@ -13,4 +13,20 @@
         <li><%= game.user.user_name %> lasted <%= game.elapsed_time.strftime("%M:%S") %> </li>
     <%end%>
 </ol>
+
+<h2> Your 3 longest games: </h2>
+<ol>
+    <% @user_longest_games.each do |game| %>
+        <li>You lasted <%= game.elapsed_time.strftime("%M:%S") %> </li>
+    <%end%>
+</ol>
+<h2> Your 3 cleanest games: </h2>
+<ol>
+    <% @user_top_messes.each do |game| %>
+    <li><%= game.messes_cleaned %> messes cleaned </li>
+    <%end%>
+</ol>
+
+
+
 <%= render "/sessions/logout" %>
