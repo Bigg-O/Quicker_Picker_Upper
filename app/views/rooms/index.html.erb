@@ -7,5 +7,7 @@
 <% end %>
 
 <h1>Inventory</h1>
-
 <p>You have a <%= Room.all.last.tools.last.name %>.</p>
+
+<h1>Time</h1>
+<p><%= (Time.now - @playTime).to_i %> seconds.</p>
