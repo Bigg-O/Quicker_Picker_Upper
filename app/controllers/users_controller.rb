@@ -28,8 +28,8 @@ class UsersController < ApplicationController
     end
     def statistics
         # do some stuff with gamestats
-
-        
+        @top_five_messes = Gamestat.top_five_messes
+        @longest_games = Gamestat.longest_games
     end
 
 
