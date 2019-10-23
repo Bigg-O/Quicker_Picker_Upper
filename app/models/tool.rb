@@ -1,6 +1,6 @@
 class Tool < ApplicationRecord
+    belongs_to :room
     has_many :roominfos
-    has_many :rooms, through: :roominfos
 
     # CLASS METHODS
 

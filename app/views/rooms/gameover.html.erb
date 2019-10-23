@@ -3,7 +3,7 @@
 <h3> Here are your stats:  </h3>
 <ul>
 <li> messes cleaned:<%= @gamestat.messes_cleaned %> </li>
-<li> total time:<%= @gamestat.initial_time - @gamestat.ending_time %> seconds </li>
+<li> total time:<%= @gamestat.elapsed_time.strftime("%H:%M:%S") %>  </li>
 </ul>
 <%= link_to "Try again", rooms_path %>
 
