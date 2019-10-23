@@ -10,11 +10,10 @@ diningroom = Room.create(name: "Diningroom")
 inventory = Room.create(name: "Inventory")
 
 
-basket = Tool.create(name: "Basket")
-vaccuum = Tool.create(name: "Vaccuum")
-cloth = Tool.create(name: "Cloth")
-mop = Tool.create(name: "Mop")
-no_tool = Tool.create(name: "No_tool")
+basket = Tool.create(name: "Basket", room: kitchen)
+vaccuum = Tool.create(name: "Vaccuum", room: livingroom)
+cloth = Tool.create(name: "Cloth", room: bedroom)
+mop = Tool.create(name: "Mop", room: inventory)
 
 Mess.create(name: "Toy Spill")
 Mess.create(name: "Snack Spill")
