@@ -1365,3 +1365,292 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 2666)
 
 
+Started GET "/users/4/statistics" for ::1 at 2019-10-22 20:42:07 -0500
+  [1m[35m (7.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#statistics as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGamestat Load (0.2ms)[0m  [1m[34mSELECT "gamestats".* FROM "gamestats"[0m
+  ↳ app/models/gamestat.rb:4:in `max_by'
+  Rendering users/statistics.html.erb
+  Rendered users/statistics.html.erb (Duration: 8.3ms | Allocations: 3684)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.5ms | Allocations: 9003)
+
+
+Started GET "/users/4/statistics" for ::1 at 2019-10-22 20:42:10 -0500
+Processing by UsersController#statistics as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGamestat Load (0.1ms)[0m  [1m[34mSELECT "gamestats".* FROM "gamestats"[0m
+  ↳ app/models/gamestat.rb:4:in `max_by'
+  Rendering users/statistics.html.erb
+  Rendered users/statistics.html.erb (Duration: 1.4ms | Allocations: 1080)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.1ms | Allocations: 2362)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1><%= current_user.user_name %> Statistics </h1>
+
+<h2>Top 5 Cleaners</h2>
+<ol>
+<% @top_five_messes.each do |game| %>
+    
+   <li><%= game.messes_cleaned %> messes cleaned by <%= game.user.user_name %> </li>
+</ol>
+<h2>Long Lasting Cleaners</h2>
+<ol>
+<% @top_five_messes.each do |game| %>
+    
+   <li><%= game.messes_cleaned %> messes cleaned by <%= game.user.user_name %> </li>
+</ol>
+):
+1:    <h1><%= current_user.user_name %> Statistics </h1>
+2:    
+3:    <h2>Top 5 Cleaners</h2>
+4:    <ol>
+5:    <% @top_five_messes.each do |game| %>
+6:        
+7:       <li><%= game.messes_cleaned %> messes cleaned by <%= game.user.user_name %> </li>
+8:    </ol>
+9:    <h2>Long Lasting Cleaners</h2>
+10:    <ol>
+11:    <% @top_five_messes.each do |game| %>
+12:        
+13:       <li><%= game.messes_cleaned %> messes cleaned by <%= game.user.user_name %> </li>
+14:    </ol>
+  
+app/views/users/statistics.html.erb:16: syntax error, unexpected end-of-input, expecting end
+app/views/users/statistics.html.erb:16: syntax error, unexpected end-of-input, expecting end
+app/views/users/statistics.html.erb:16: syntax error, unexpected end-of-input, expecting end
+app/views/users/statistics.html.erb:16: syntax error, unexpected end-of-input, expecting end
+app/views/users/statistics.html.erb:16: syntax error, unexpected end-of-input, expecting end
+app/views/users/statistics.html.erb:16: syntax error, unexpected end-of-input, expecting end
+Started GET "/users/4/statistics" for ::1 at 2019-10-22 20:43:54 -0500
+Processing by UsersController#statistics as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGamestat Load (0.1ms)[0m  [1m[34mSELECT "gamestats".* FROM "gamestats"[0m
+  ↳ app/models/gamestat.rb:4:in `max_by'
+  Rendering users/statistics.html.erb
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered users/statistics.html.erb (Duration: 28.1ms | Allocations: 8136)
+Completed 200 OK in 33ms (Views: 29.9ms | ActiveRecord: 1.3ms | Allocations: 10658)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  [1m[36mMess Load (0.1ms)[0m  [1m[34mSELECT "messes".* FROM "messes"[0m
+  [1m[36mTool Load (0.1ms)[0m  [1m[34mSELECT "tools".* FROM "tools"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.3ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Living Room"], ["created_at", "2019-10-23 01:44:33.621523"], ["updated_at", "2019-10-23 01:44:33.621523"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.3ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Kitchen"], ["created_at", "2019-10-23 01:44:33.625725"], ["updated_at", "2019-10-23 01:44:33.625725"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.3ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Bedroom"], ["created_at", "2019-10-23 01:44:33.629848"], ["updated_at", "2019-10-23 01:44:33.629848"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.3ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Bathroom"], ["created_at", "2019-10-23 01:44:33.633801"], ["updated_at", "2019-10-23 01:44:33.633801"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoom Create (0.3ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Inventory"], ["created_at", "2019-10-23 01:44:33.638195"], ["updated_at", "2019-10-23 01:44:33.638195"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTool Create (0.2ms)[0m  [1m[32mINSERT INTO "tools" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Basket"], ["created_at", "2019-10-23 01:44:33.644639"], ["updated_at", "2019-10-23 01:44:33.644639"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTool Create (0.2ms)[0m  [1m[32mINSERT INTO "tools" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mop"], ["created_at", "2019-10-23 01:44:33.647941"], ["updated_at", "2019-10-23 01:44:33.647941"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTool Create (0.3ms)[0m  [1m[32mINSERT INTO "tools" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Vaccuum"], ["created_at", "2019-10-23 01:44:33.651226"], ["updated_at", "2019-10-23 01:44:33.651226"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTool Create (0.2ms)[0m  [1m[32mINSERT INTO "tools" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Cloth"], ["created_at", "2019-10-23 01:44:33.654304"], ["updated_at", "2019-10-23 01:44:33.654304"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTool Create (0.3ms)[0m  [1m[32mINSERT INTO "tools" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "No_tool"], ["created_at", "2019-10-23 01:44:33.658102"], ["updated_at", "2019-10-23 01:44:33.658102"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMess Create (0.2ms)[0m  [1m[32mINSERT INTO "messes" ("created_at", "updated_at", "name") VALUES (?, ?, ?)[0m  [["created_at", "2019-10-23 01:44:33.664006"], ["updated_at", "2019-10-23 01:44:33.664006"], ["name", "Toy Spill"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMess Create (0.3ms)[0m  [1m[32mINSERT INTO "messes" ("created_at", "updated_at", "name") VALUES (?, ?, ?)[0m  [["created_at", "2019-10-23 01:44:33.667902"], ["updated_at", "2019-10-23 01:44:33.667902"], ["name", "Juice Spill"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMess Create (0.3ms)[0m  [1m[32mINSERT INTO "messes" ("created_at", "updated_at", "name") VALUES (?, ?, ?)[0m  [["created_at", "2019-10-23 01:44:33.672428"], ["updated_at", "2019-10-23 01:44:33.672428"], ["name", "Snack Spill"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMess Create (0.4ms)[0m  [1m[32mINSERT INTO "messes" ("created_at", "updated_at", "name") VALUES (?, ?, ?)[0m  [["created_at", "2019-10-23 01:44:33.680102"], ["updated_at", "2019-10-23 01:44:33.680102"], ["name", "Drawing on the Wall"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMess Create (0.4ms)[0m  [1m[32mINSERT INTO "messes" ("created_at", "updated_at", "name") VALUES (?, ?, ?)[0m  [["created_at", "2019-10-23 01:44:33.703292"], ["updated_at", "2019-10-23 01:44:33.703292"], ["name", "No_mess"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "Mr. Clean"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_name", "Mr. Clean"], ["password_digest", "$2a$12$5P8RH1qzJtmWV9eJanr0Q.THhdni6JjEL4Oue3bfUPzPRwxEsze/O"], ["created_at", "2019-10-23 01:44:33.932297"], ["updated_at", "2019-10-23 01:44:33.932297"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "Queen of Clean"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_name", "Queen of Clean"], ["password_digest", "$2a$12$rykrmlbGJhLNJ2cOp3S7dexk7maoR6Uf0.HTT77pYPIA5H/6YvKKS"], ["created_at", "2019-10-23 01:44:34.157609"], ["updated_at", "2019-10-23 01:44:34.157609"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "Average Joe"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_name", "Average Joe"], ["password_digest", "$2a$12$SPqxM9Gx5vcw3oH7plcYlO0fjRyKvwDUsOD2ll67ijYakHnvZ6Nh6"], ["created_at", "2019-10-23 01:44:34.379100"], ["updated_at", "2019-10-23 01:44:34.379100"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "Subpar Steve"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_name", "Subpar Steve"], ["password_digest", "$2a$12$7eQaM2xMs/fG6TqDXvea2OTTb5yathv.yVBK1t.NWUWz6gPt9uine"], ["created_at", "2019-10-23 01:44:34.619663"], ["updated_at", "2019-10-23 01:44:34.619663"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "Dirty Dude"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("user_name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_name", "Dirty Dude"], ["password_digest", "$2a$12$ZFEZMahblMSBpp5QZNjnzuBQu9sPVqGoo6ucZeihDgc0ZuDFctQVO"], ["created_at", "2019-10-23 01:44:34.859006"], ["updated_at", "2019-10-23 01:44:34.859006"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGamestat Create (0.2ms)[0m  [1m[32mINSERT INTO "gamestats" ("messes_cleaned", "user_id", "created_at", "updated_at", "elapsed_time") VALUES (?, ?, ?, ?, ?)[0m  [["messes_cleaned", 250], ["user_id", 7], ["created_at", "2019-10-23 01:44:34.877536"], ["updated_at", "2019-10-23 01:44:34.877536"], ["elapsed_time", "2000-01-01 06:45:00"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGamestat Create (0.2ms)[0m  [1m[32mINSERT INTO "gamestats" ("messes_cleaned", "user_id", "created_at", "updated_at", "elapsed_time") VALUES (?, ?, ?, ?, ?)[0m  [["messes_cleaned", 200], ["user_id", 6], ["created_at", "2019-10-23 01:44:34.880762"], ["updated_at", "2019-10-23 01:44:34.880762"], ["elapsed_time", "2000-01-01 06:30:00"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGamestat Create (0.2ms)[0m  [1m[32mINSERT INTO "gamestats" ("messes_cleaned", "user_id", "created_at", "updated_at", "elapsed_time") VALUES (?, ?, ?, ?, ?)[0m  [["messes_cleaned", 150], ["user_id", 8], ["created_at", "2019-10-23 01:44:34.885197"], ["updated_at", "2019-10-23 01:44:34.885197"], ["elapsed_time", "2000-01-01 06:20:00"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGamestat Create (0.2ms)[0m  [1m[32mINSERT INTO "gamestats" ("messes_cleaned", "user_id", "created_at", "updated_at", "elapsed_time") VALUES (?, ?, ?, ?, ?)[0m  [["messes_cleaned", 100], ["user_id", 9], ["created_at", "2019-10-23 01:44:34.888816"], ["updated_at", "2019-10-23 01:44:34.888816"], ["elapsed_time", "2000-01-01 06:15:00"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGamestat Create (0.3ms)[0m  [1m[32mINSERT INTO "gamestats" ("messes_cleaned", "user_id", "created_at", "updated_at", "elapsed_time") VALUES (?, ?, ?, ?, ?)[0m  [["messes_cleaned", 50], ["user_id", 10], ["created_at", "2019-10-23 01:44:34.892736"], ["updated_at", "2019-10-23 01:44:34.892736"], ["elapsed_time", "2000-01-01 06:10:00"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/users/4/statistics" for ::1 at 2019-10-22 20:44:53 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#statistics as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGamestat Load (0.2ms)[0m  [1m[34mSELECT "gamestats".* FROM "gamestats"[0m
+  ↳ app/models/gamestat.rb:4:in `max_by'
+  Rendering users/statistics.html.erb
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/users/statistics.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/users/statistics.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/users/statistics.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/users/statistics.html.erb:6
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/users/statistics.html.erb:6
+  Rendered users/statistics.html.erb (Duration: 33.2ms | Allocations: 11705)
+Completed 200 OK in 55ms (Views: 37.8ms | ActiveRecord: 1.9ms | Allocations: 20283)
+
+
+Started GET "/users/4/statistics" for ::1 at 2019-10-22 20:58:28 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#statistics as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGamestat Load (0.2ms)[0m  [1m[34mSELECT "gamestats".* FROM "gamestats"[0m
+  ↳ app/models/gamestat.rb:4:in `max_by'
+  [1m[36mCACHE Gamestat Load (0.0ms)[0m  [1m[34mSELECT "gamestats".* FROM "gamestats"[0m
+  ↳ app/models/gamestat.rb:7:in `max_by'
+  Rendering users/statistics.html.erb
+  Rendered users/statistics.html.erb (Duration: 6.9ms | Allocations: 3567)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.2ms | Allocations: 10893)
+
+
+Started GET "/users/4/statistics" for ::1 at 2019-10-22 20:58:32 -0500
+Processing by UsersController#statistics as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGamestat Load (0.2ms)[0m  [1m[34mSELECT "gamestats".* FROM "gamestats"[0m
+  ↳ app/models/gamestat.rb:4:in `max_by'
+  [1m[36mCACHE Gamestat Load (0.0ms)[0m  [1m[34mSELECT "gamestats".* FROM "gamestats"[0m
+  ↳ app/models/gamestat.rb:7:in `max_by'
+  Rendering users/statistics.html.erb
+  Rendered users/statistics.html.erb (Duration: 1.0ms | Allocations: 1114)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms | Allocations: 3055)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1><%= current_user.user_name %>'s Statistics </h1>
+
+<h2>Top 5 Cleaners</h2>
+<ol>
+    <% @top_five_messes.each do |game| %>
+    <li><%= game.messes_cleaned %> messes cleaned by <%= game.user.user_name %> </li>
+    <%end%>
+</ol>
+
+<h2>Long Lasting Cleaners</h2>
+<ol>
+    <% @longest_games.each do |game| %>
+        <li><%= game.user.user_name %> lasted <%= game.elapsed_time.strftime(%H:%M:%S) %> </li>
+    <%end%>
+</ol>
+):
+1:    <h1><%= current_user.user_name %>'s Statistics </h1>
+2:    
+3:    <h2>Top 5 Cleaners</h2>
+4:    <ol>
+5:        <% @top_five_messes.each do |game| %>
+6:        <li><%= game.messes_cleaned %> messes cleaned by <%= game.user.user_name %> </li>
+7:        <%end%>
+8:    </ol>
+9:    
+10:    <h2>Long Lasting Cleaners</h2>
+11:    <ol>
+12:        <% @longest_games.each do |game| %>
+13:            <li><%= game.user.user_name %> lasted <%= game.elapsed_time.strftime(%H:%M:%S) %> </li>
+14:        <%end%>
+15:    </ol>
+  
+app/views/users/statistics.html.erb:13: unknown type of %string
+app/views/users/statistics.html.erb:13: syntax error, unexpected end-of-input, expecting ')'
+app/views/users/statistics.html.erb:13: unknown type of %string
+app/views/users/statistics.html.erb:13: syntax error, unexpected end-of-input, expecting ')'
+app/views/users/statistics.html.erb:13: unknown type of %string
+app/views/users/statistics.html.erb:13: syntax error, unexpected end-of-input, expecting ')'
+app/views/users/statistics.html.erb:13: unknown type of %string
+app/views/users/statistics.html.erb:13: syntax error, unexpected end-of-input, expecting ')'
+app/views/users/statistics.html.erb:13: unknown type of %string
+app/views/users/statistics.html.erb:13: syntax error, unexpected end-of-input, expecting ')'
+app/views/users/statistics.html.erb:13: unknown type of %string
+app/views/users/statistics.html.erb:13: syntax error, unexpected end-of-input, expecting ')'
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mGamestat Load (0.2ms)[0m  [1m[34mSELECT "gamestats".* FROM "gamestats" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mGamestat Load (0.5ms)[0m  [1m[34mSELECT "gamestats".* FROM "gamestats" ORDER BY "gamestats"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGamestat Load (0.1ms)[0m  [1m[34mSELECT "gamestats".* FROM "gamestats" ORDER BY "gamestats"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/users/4/statistics" for ::1 at 2019-10-22 21:02:27 -0500
+Processing by UsersController#statistics as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGamestat Load (0.1ms)[0m  [1m[34mSELECT "gamestats".* FROM "gamestats"[0m
+  ↳ app/models/gamestat.rb:4:in `max_by'
+  [1m[36mCACHE Gamestat Load (0.0ms)[0m  [1m[34mSELECT "gamestats".* FROM "gamestats"[0m
+  ↳ app/models/gamestat.rb:7:in `max_by'
+  Rendering users/statistics.html.erb
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/users/statistics.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/users/statistics.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/users/statistics.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/users/statistics.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/users/statistics.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/users/statistics.html.erb:13
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/users/statistics.html.erb:13
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/users/statistics.html.erb:13
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/users/statistics.html.erb:13
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/users/statistics.html.erb:13
+  Rendered users/statistics.html.erb (Duration: 30.6ms | Allocations: 14217)
+Completed 200 OK in 38ms (Views: 33.5ms | ActiveRecord: 1.0ms | Allocations: 17393)
+
+
