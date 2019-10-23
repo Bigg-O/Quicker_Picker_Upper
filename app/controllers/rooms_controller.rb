@@ -2,6 +2,9 @@ class RoomsController < ApplicationController
 
     @@timeStep = 0
     @@playTime = nil
+    $current_messes_cleaned = 0
+    
+    
 
     def playgame
         @@playTime = Time.now
@@ -26,9 +29,6 @@ class RoomsController < ApplicationController
         @room = Room.find(params[:id])
     end
 
-    def gameover
-        @gamestat = current_user.gamestats.last
-    end
 
     def drop_button
         @room = Room.find(params[:id])
@@ -44,7 +44,7 @@ class RoomsController < ApplicationController
 
     def clean_button
         @room = Room.find(params[:id])
-        @room.clean_mess(params[:mess])
+        @room.clean_mess(params[:mess], current_user)
         redirect_to room_path(@room)
     end
 
@@ -57,7 +57,9 @@ class RoomsController < ApplicationController
         end
 
         def gameOver?
+            elapsed = Time.now - @@playTime
             if Room.gameover?
+                Gamestat.create($current_messes_cleaned, current_user.id, elapsed)
                 redirect_to gameover_path
             end
         end

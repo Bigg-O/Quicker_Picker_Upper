@@ -39,10 +39,6 @@ Gamestat.create( messes_cleaned: 50, user: dirtydude, elapsed_time: Time.parse("
 
 Roominfo.create(room: livingroom, mess: juice_spill)
 Roominfo.create(room: kitchen, mess: snack_spill)
-Roominfo.create(room: bedroom, mess: no_mess)
-Roominfo.create(room: bathroom, mess: no_mess)
-Roominfo.create(room: diningroom, mess: no_mess)
-Roominfo.create(room: inventory, mess: no_mess)
 
 
 

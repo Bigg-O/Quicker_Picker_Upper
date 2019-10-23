@@ -34,11 +34,12 @@ class Room < ApplicationRecord
         self.save
     end
 
-    def clean_mess(mess_to_clean)
+    def clean_mess(mess_to_clean, user)
         cleanme = Mess.all.find_by_id(mess_to_clean)
         if Room.inventory.tools.first == cleanme.tool
             self.messes.delete(cleanme)
             self.save
+            $current_messes_cleaned += 1
         end
 
     end
