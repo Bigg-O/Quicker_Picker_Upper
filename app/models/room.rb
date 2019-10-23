@@ -35,9 +35,9 @@ class Room < ApplicationRecord
     end
 
     def clean_mess(mess_to_clean)
-        puts mess_to_clean
-        if Room.inventory.tools.first == mess_to_clean.tool
-            self.mess.delete(mess)
+        cleanme = Mess.all.find_by_id(mess_to_clean)
+        if Room.inventory.tools.first == cleanme.tool
+            self.messes.delete(cleanme)
             self.save
         end
 
