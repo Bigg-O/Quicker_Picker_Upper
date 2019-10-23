@@ -30,6 +30,8 @@ class UsersController < ApplicationController
         # do some stuff with gamestats
         @top_five_messes = Gamestat.top_five_messes
         @longest_games = Gamestat.longest_games
+        @user_top_messes = Gamestat.user_top_messes(current_user)
+        @user_longest_games =Gamestat.user_longest_games(current_user)
     end
 
 

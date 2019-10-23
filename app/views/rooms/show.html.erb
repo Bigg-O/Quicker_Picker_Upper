@@ -3,10 +3,19 @@
 Tools in the room <br>
     <% @room.tools.each do |tool| %>
         <p>- <%= tool.name %></p>
+        <%= button_to 'Pick Up', pick_up_button_path(:id => @room.id, :tool_picked => tool.id), method: :post %>
     <% end %>
 
 <h1>Inventory</h1>
 
-<p>You have a <%= Room.all.last.tools.last.name %>.</p>
+
+<p>
+<% if !Room.inventory.tools.empty? %>
+    <%= Room.inventory.tools.first.name %>
+    <%= button_to 'Drop', drop_button_path(:id => @room.id), method: :post %>
+        <% else %>
+        <%= "Empty" %></p>
+    <%end%></p>
+
 
 <p><%= link_to "Back to the House", "/rooms" %></p>
