@@ -65,7 +65,7 @@ class Room < ApplicationRecord
         if self.fullmess?
             return false
         end
-        1.times do
+        loop do
             random_mess = Mess.all.sample
             if !self.messes.include?(random_mess)
                 Roominfo.create(room:self, mess:random_mess)
