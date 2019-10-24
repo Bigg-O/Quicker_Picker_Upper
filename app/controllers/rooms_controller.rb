@@ -81,6 +81,7 @@ class RoomsController < ApplicationController
                     Room.addKids
                     if !Room.add_messes
                         redirect_to gameover_path
+                        break
                     end
                 end
                 @@timeStep = current_step
