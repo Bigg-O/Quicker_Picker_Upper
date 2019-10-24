@@ -1,6 +1,7 @@
 Room.destroy_all
 Mess.destroy_all
 Tool.destroy_all
+Gamestat.destroy_all
 
 livingroom = Room.create(name: "Living Room")
 kitchen = Room.create(name: "Kitchen")

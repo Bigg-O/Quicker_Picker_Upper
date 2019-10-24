@@ -5,6 +5,7 @@ class RoomsController < ApplicationController
     $current_messes_cleaned = 0
     
     def newgame
+        Room.remove_kids
         Roominfo.destroy_all
         @@playTime = Time.now
         redirect_to action: 'index'
