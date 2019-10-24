@@ -5,6 +5,7 @@ class RoomsController < ApplicationController
     $current_messes_cleaned = 0
     
     def newgame
+        Room.remove_kids
         Roominfo.destroy_all
         @@playTime = Time.now
         redirect_to action: 'index'
@@ -62,7 +63,7 @@ class RoomsController < ApplicationController
         end
 
         def gameOver?
-            elapsed = Time.now - @@playTime
+            elapsed = (Time.now - @@playTime).to_i
             if Room.gameover?
                 Gamestat.create(messes_cleaned: $current_messes_cleaned, user_id: current_user.id, elapsed_time: elapsed)
                 redirect_to gameover_path
@@ -80,6 +81,7 @@ class RoomsController < ApplicationController
                     Room.addKids
                     if !Room.add_messes
                         redirect_to gameover_path
+                        break
                     end
                 end
                 @@timeStep = current_step

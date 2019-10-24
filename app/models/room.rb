@@ -13,12 +13,6 @@ class Room < ApplicationRecord
         inv = Room.all.select { |room| room.name == "Inventory"}.first
     end
 
-    # def room_tools
-    #     self.tools.map { |tool| tool.name }
-    #     #array of all tools in the room
-    # end
-
-
     def pick_up(tool_picked)
         tool = Tool.all.find_by_id(tool_picked)
         if Room.inventory.tools.length == 0 && self.tools.length != 0
@@ -65,7 +59,7 @@ class Room < ApplicationRecord
         if self.fullmess?
             return false
         end
-        1.times do
+        loop do
             random_mess = Mess.all.sample
             if !self.messes.include?(random_mess)
                 Roominfo.create(room:self, mess:random_mess)
@@ -113,6 +107,13 @@ class Room < ApplicationRecord
         # check a single room to see if its messy
         # if a single room has roominfos (.empty? is false), its messy (return true)
         !self.roominfos.empty?
+    end
+
+    def self.remove_kids
+        self.all.each do |room|
+            room.num_of_kids = 0
+            room.save
+        end
     end
 
     def self.add_messes

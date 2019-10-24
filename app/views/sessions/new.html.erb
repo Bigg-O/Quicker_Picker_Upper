@@ -1,8 +1,49 @@
-Login
-<%= form_with model:@user, url:"/login", method:"post" do |f|%>
-    <%= f.label :user_name%>
-    <%= f.text_field :user_name%><br>
-    <%= f.label :password%>
-    <%= f.password_field  :password%><br>
-    <%= f.submit"Login" %>
-<% end %>
+
+
+    
+    <div class="container" style="max-width: 300px; margin-top: 300px;">
+ 
+    <div classes="container" style="text-align: center; font-family: serif;">
+        <h1>Please Sign In</h1>
+    </div></br>
+   
+    <%= form_with model:@user, url:"/login", method:"post" do |f|%>
+        
+        
+        <div>
+            <%= f.text_field :user_name, class: "form-control form-control-lg", placeholder: "Username" %>
+            
+    
+   
+
+
+        
+            <%= f.password_field :password, class: "form-control form-control-lg", placeholder: "Password" %>
+           
+            
+
+
+       
+           
+            <br />
+            <div class="text-center">
+            <%= f.submit"Sign In", class: "btn btn-secondary btn-md text-center" %>
+            </div>
+            <% end %>
+            
+            </div>
+            
+            <% if @user.errors.any? %>
+            <%= @user.errors.full_messages %>
+          
+            <% end %>
+        
+        
+        
+        
+
+        
+    
+        </div>
+
+    
