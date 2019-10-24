@@ -1,12 +1,47 @@
-<h1>Create an Account</h1>
+
+
+
+
+
+
+<div class="container" style="max-width: 300px; margin-top: 300px;">
+ 
+<div classes="container" style="text-align: center; font-family: serif;">
+    <h1>Create Account</h1>
+</div></br>
+
 <%= form_for @user do |f|%>
-<h3>Username:</h3> <%= f.text_field :user_name %>
-<h3>Password:</h3> <%= f.password_field :password %>
-<h3>Password Confirmation:</h3> <%= f.password_field :password_confirmation %>
-</br>
-</br>
-<%= f.submit %>
-<%end%>
-<% if @user.errors.any? %>
-  <%= @user.errors.full_messages %>
-<% end %>
+    
+    
+    <div>
+        <%= f.text_field :user_name, class: "form-control form-control-lg", placeholder: "Username"%>
+        
+
+    
+        <%= f.password_field  :password, class: "form-control form-control-lg", placeholder: "Password"%>
+       
+        
+
+        <%= f.password_field :password_confirmation, class: "form-control form-control-lg", placeholder: "Confirm Password"%>
+   
+       
+        <br />
+        <div class="text-center">
+        <%= f.submit"Submit", class: "btn btn-secondary btn-md text-center" %>
+        </div>
+        
+        <% end %>
+        
+        <% if @user.errors.any? %>
+        <%= @user.errors.full_messages %>
+    
+        <% end %>
+        </div>
+
+    
+    
+    
+
+    
+    </div>
+    </div>
