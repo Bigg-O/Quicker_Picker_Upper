@@ -13,7 +13,11 @@ class SessionsController < ApplicationController
             session[:user_id] = @user.id
             redirect_to '/main'
         else
-            # flash.now[:alert] = "Email or password is invalid"
+            if @user
+            @user.errors.add(:password, :wrong_password, message: "is incorrect.")
+            else 
+                @message = "That user name does not exist."
+            end
             @user ||= User.new
             render :new
         end
