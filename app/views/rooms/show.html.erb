@@ -1,5 +1,3 @@
-
-
 <div class="card" style="width: 10rem; text-align: center; float: left; height: 120px;">
 <div class="card-body">
 <h5 class="card-title">Time</h5>
@@ -31,8 +29,6 @@
 </div>
 
 
-
-
 <div class="container" style="max-width: 300px;">
  <br /><br /><br /><br /><br />
 <div classes="container" style="text-align: center; font-family: serif; z-index: 2">
@@ -41,13 +37,23 @@
         </br>
 
 
-
-
-
 <h3>Messes</h3>
 <% @room.messes.each do |mess| %>
-    <p>-<%= mess.name %>
+    <% if mess.name == "Toy Spill" %>
+        <%= mess.name %>
+        <%= image_tag "/assets/toy.png" %>
+    <% elsif mess.name == "Drawing on the Wall" %>
+        <%= mess.name %>
+        <%= image_tag "/assets/drawn.jpg" %>
+    <% elsif mess.name == "Snack Spill" %>
+        <%= mess.name %>
+        <%= image_tag "/assets/snack.png" %>
+    <% elsif mess.name == "Juice Spill" %>
+        <%= mess.name %>
+        <%= image_tag "/assets/juice.png" %>
+    <% end %>
     <% if Room.inventory.tools.first == mess.tool%>
+
         <%= button_to 'Clean', clean_button_path(:id => @room.id, :mess => mess.id), method: :post, class: "btn btn-secondary btn-md text-center" %>
     <%end%>
 <%end%>
