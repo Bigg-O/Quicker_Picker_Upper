@@ -67,6 +67,7 @@ class RoomsController < ApplicationController
             if Room.gameover?
                 Gamestat.create(messes_cleaned: $current_messes_cleaned, user_id: current_user.id, elapsed_time: elapsed)
                 redirect_to gameover_path
+                return
             end
         end
 
