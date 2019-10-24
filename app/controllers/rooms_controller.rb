@@ -7,6 +7,7 @@ class RoomsController < ApplicationController
     
 
     def newgame
+        Room.remove_kids
         Roominfo.destroy_all
         @@playTime = Time.now
         redirect_to action: 'index'
