@@ -1,10 +1,10 @@
 <h1>House View</h1>
-<% @rooms.each do |room| %>
-    <% if room.name != "Inventory" %>
-    number of kids <%= room.num_of_kids if room.num_of_kids %>
-        <p><%= link_to room.name, room %></p>
-    <% end %>
-<% end %>
+
+<%= link_to (image_tag "/assets/livingroom.png", :size => '260x200'), @rooms.first %>
+<%= link_to (image_tag "/assets/Diningroom.png", :size => '260x200'), @rooms.fifth %>
+<%= link_to (image_tag "/assets/Kitchen.png", :size => '260x200'), @rooms.second %>
+<%= link_to (image_tag "/assets/bethroom.png", :size => '200x200'), @rooms.fourth %>
+<%= link_to (image_tag "/assets/bedroom.png", :size => '200x200'), @rooms.third %>
 
 <h1>Inventory</h1>
 <p>

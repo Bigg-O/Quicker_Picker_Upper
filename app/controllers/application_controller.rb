@@ -16,6 +16,7 @@ class ApplicationController < ActionController::Base
     end
 
     protected
+
       def authorize
         unless User.find_by(id: session[:user_id])
             redirect_to '/users'
