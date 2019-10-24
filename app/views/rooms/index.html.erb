@@ -1,19 +1,36 @@
-<h1>House View</h1>
-
-<%= link_to (image_tag "/assets/livingroom.png", :size => '260x200'), @rooms.first %>
-<%= link_to (image_tag "/assets/Diningroom.png", :size => '260x200'), @rooms.fifth %>
-<%= link_to (image_tag "/assets/Kitchen.png", :size => '260x200'), @rooms.second %>
-<%= link_to (image_tag "/assets/bethroom.png", :size => '200x200'), @rooms.fourth %>
-<%= link_to (image_tag "/assets/bedroom.png", :size => '200x200'), @rooms.third %>
-
-<h1>Inventory</h1>
-<p>
-    <% if !Room.inventory.tools.empty? %>
-        <%= Room.inventory.tools.first.name %>
-    <% else %>
-        <%= "Empty" %></p>
-    <%end%>
-</p>
-
-<h1>Time</h1>
+<div class="card" style="width: 10rem; text-align: center;">
+<div class="card-body">
+<h5 class="card-title"> Time </h5>
 <p><%= (Time.now - @playTime).to_i %> seconds.</p>
+</div>
+</div>
+
+<div class="card" style="width: 10rem; text-align: center; margin-left: 5px;">
+  <div class="card-body">
+    <h5 class="card-title">Inventory</h5>
+    <p>
+        <% if !Room.inventory.tools.empty? %>
+            <%= Room.inventory.tools.first.name %>
+        <% else %>
+            <%= "Empty" %></p>
+        <%end%>
+    </p>
+  </div>
+</div>
+</div>
+
+<div classes="container" style="text-align: center; font-family: serif;">
+  <h1>House View</h1>
+
+  <div class="container" style="max-width: 900px; margin-top: 100px;">
+
+    <%= link_to (image_tag "/assets/livingroom.png", :size => '260x200'), @rooms.first %>
+    <%= link_to (image_tag "/assets/Diningroom.png", :size => '260x200'), @rooms.fifth %>
+    <%= link_to (image_tag "/assets/Kitchen.png", :size => '260x200'), @rooms.second %>
+  </div>
+
+  <div class="container" style="max-width: 900px; margin-top: 5px;">
+    <%= link_to (image_tag "/assets/bethroom.png", :size => '200x200'), @rooms.fourth %>
+    <%= link_to (image_tag "/assets/bedroom.png", :size => '200x200'), @rooms.third %>
+  </div>
+</div>

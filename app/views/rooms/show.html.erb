@@ -2,12 +2,25 @@
 </br>
 </br>
 number of kids <%= @room.num_of_kids if @room.num_of_kids %>
+
 <h3>Messes</h3>
 <% @room.messes.each do |mess| %>
-    <p>-<%= mess.name %>
+    <% if mess.name == "Toy Spill" %>
+        <%= mess.name %>
+        <%= image_tag "/assets/toy.png" %>
+    <% elsif mess.name == "Drawing on the Wall" %>
+        <%= mess.name %>
+        <%= image_tag "/assets/drawn.jpg" %>
+    <% elsif mess.name == "Snack Spill" %>
+        <%= mess.name %>
+        <%= image_tag "/assets/snack.png" %>
+    <% elsif mess.name == "Juice Spill" %>
+        <%= mess.name %>
+        <%= image_tag "/assets/juice.png" %>
+    <% end %>
     <% if Room.inventory.tools.first == mess.tool%>
         <%= button_to 'Clean', clean_button_path(:id => @room.id, :mess => mess.id), method: :post %>
-    <%end%>
+    <% end %>
 <%end%>
 </br>
 </br>
