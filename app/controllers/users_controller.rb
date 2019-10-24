@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+    skip_before_action :authorize, only: [:index ,:new, :create]
+
     def index
         #new game and stats
     end
@@ -10,8 +12,6 @@ class UsersController < ApplicationController
 
     def new
         @user = User.new
-        puts "hello"
-        
     end
 
     def create
@@ -22,10 +22,10 @@ class UsersController < ApplicationController
             redirect_to login_path, notice: 'Your account was successfully created.' 
         else
             render :new
-            
         end
 
     end
+
     def statistics
         # do some stuff with gamestats
         @top_five_messes = Gamestat.top_five_messes
@@ -34,10 +34,10 @@ class UsersController < ApplicationController
         @user_longest_games =Gamestat.user_longest_games(current_user)
     end
 
-
     private
 
-    def user_params
-        params.require(:user).permit(:user_name, :password, :password_confirmation)
-    end
+        def user_params
+            params.require(:user).permit(:user_name, :password, :password_confirmation)
+        end
+
 end

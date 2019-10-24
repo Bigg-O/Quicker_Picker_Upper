@@ -1,11 +1,9 @@
 class RoomsController < ApplicationController
-
+    
     @@timeStep = 0
     @@playTime = nil
     $current_messes_cleaned = 0
     
-    
-
     def newgame
         Roominfo.destroy_all
         @@playTime = Time.now
@@ -17,10 +15,14 @@ class RoomsController < ApplicationController
     end
     
     def index
-        update
-        gameOver?
-        @playTime = @@playTime
-        @rooms = Room.all
+        if @@playTime
+            update
+            gameOver?
+            @playTime = @@playTime
+            @rooms = Room.all
+        else
+            redirect_to '/main'
+        end
     end
     
     def show
