@@ -18,6 +18,7 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.valid?
             @user.save
+            puts @user 
             session[:user_id]
             redirect_to login_path, notice: 'Your account was successfully created.' 
         else
