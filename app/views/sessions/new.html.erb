@@ -5,4 +5,9 @@ Login
     <%= f.label :password%>
     <%= f.password_field  :password%><br>
     <%= f.submit"Login" %>
-<% end %>
+    <% end %>
+    <% if @user.errors.any? %>
+      <%= @user.errors.full_messages %>
+        <% else %>
+            <%= @message %>
+    <% end %>
