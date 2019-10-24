@@ -1,33 +1,71 @@
-<h1><%= current_user.user_name %>'s Statistics </h1>
+<div class="container" style="margin-top: 50px; margin-bottom: 100px;text-align: center">
+    <div class="row justify-content-center">
+        <div style="text-align: center" class="col 12">
+            <h1 style="margin-bottom: 20px"><%= current_user.user_name %>'s Statistics </h1>
+        </div>
+    </div>
+    <div class="row" style="text-align: center">
+        <div class="col-sm-6"
+            <%= form_with(url: "/main", method: "get" ) do %>
+                <%= submit_tag("Main Menu") %>
+            <% end %>
+        </div>
+        <div class="col-sm-6">
+            <%= render "/sessions/logout" %>
+        </div>
+    </div>
+    <div style="margin: 0 auto">
+    
+    <div class="card" style="width: auto;">
+        <div class="card-header">
+            <h2>Top 5 Cleaners</h2> 
+        </div>
+        <ol class="list-group list-group-flush">
+            <% @top_five_messes.each_with_index do |game, index| %>
+                <li class="list-group-item"><%= index+1 %>.  <%= game.messes_cleaned %> messes cleaned by <%= game.user.user_name %> </li>
+             <%end%>
+        </ol>
+    </div>
+    
+    
+    <div class="card" style="width: auto;">
+        <div class="card-header">
+            <h2>Long Lasting Cleaners</h2>
+        </div>
+        <ol class="list-group list-group-flush">
+            <% @longest_games.each_with_index do |game, index| %>
+                <li class="list-group-item"><%= index+1 %>.  <%= game.user.user_name %> lasted <%= game.elapsed_time %> seconds </li>
+            <%end%>
+        </ol>
+    </div>        
+      
 
-<h2>Top 5 Cleaners</h2>
-<ol>
-    <% @top_five_messes.each do |game| %>
-    <li><%= game.messes_cleaned %> messes cleaned by <%= game.user.user_name %> </li>
-    <%end%>
-</ol>
+    <div class="card" style="width: auto;">
+        <div class="card-header">
+            <h2> Your 3 longest games: </h2>
+        </div>
+        <ol class="list-group list-group-flush">
+            <% @user_longest_games.each_with_index do |game, index| %>
+                <li class="list-group-item"><%= index+1 %>.  You lasted <%= game.elapsed_time %> seconds</li>
+            <%end%>
+        </ol>
+    </div>
 
-<h2>Long Lasting Cleaners</h2>
-<ol>
-    <% @longest_games.each do |game| %>
-        <li><%= game.user.user_name %> lasted <%= game.elapsed_time %> </li>
-    <%end%>
-</ol>
-
-
-<h2> Your 3 longest games: </h2>
-<ol>
-    <% @user_longest_games.each do |game| %>
-        <li>You lasted <%= game.elapsed_time %> </li>
-    <%end%>
-</ol>
-<h2> Your 3 cleanest games: </h2>
-<ol>
-    <% @user_top_messes.each do |game| %>
-    <li><%= game.messes_cleaned %> messes cleaned </li>
-    <%end%>
-</ol>
-<%= form_with(url: "/main", method: "get" ) do %>
-    <%= submit_tag("Main Menu") %>
-<% end %>
-<%= render "/sessions/logout" %>
+    <div class="card" style="width: auto;">
+        <div class="card-header">
+            <h2> Your 3 cleanest games: </h2>
+        </div>
+        <ol class="list-group list-group-flush">
+            <% @user_top_messes.each_with_index do |game, index| %>
+                <li class="list-group-item"><%= index+1 %>.   <%= game.messes_cleaned %> messes cleaned </li>
+             <%end%>
+        </ol>
+    </div>
+    
+    
+        
+        
+       
+   
+    </div>
+</div>
