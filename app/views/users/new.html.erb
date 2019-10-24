@@ -7,3 +7,6 @@
 </br>
 <%= f.submit %>
 <%end%>
+<% if @user.errors.any? %>
+  <%= @user.errors.full_messages %>
+<% end %>
