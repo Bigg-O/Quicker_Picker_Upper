@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+
+    before_action :authorize
     helper_method :current_user
     
     def current_user
@@ -8,7 +10,15 @@ class ApplicationController < ActionController::Base
           @current_user = nil
         end
     end
+
     def require_login
         redirect_to login_path unless session.include? :user_id
     end
+
+    protected
+      def authorize
+        unless User.find_by(id: session[:user_id])
+            redirect_to '/users'
+        end
+      end
 end

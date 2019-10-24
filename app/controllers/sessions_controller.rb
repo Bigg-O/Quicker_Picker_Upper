@@ -1,8 +1,11 @@
 class SessionsController < ApplicationController
+    
+    skip_before_action :authorize
+
     def new
         @user = User.new
-        
     end
+
     def create
         @user = User.find_by(user_name: user_params[:user_name])
         
@@ -10,14 +13,12 @@ class SessionsController < ApplicationController
             session[:user_id] = @user.id
             redirect_to '/main'
         else
-            
             # flash.now[:alert] = "Email or password is invalid"
             @user ||= User.new
             render :new
         end
     end
 
-    
     def destroy
         session.delete :user_id
         redirect_to login_path 
@@ -25,8 +26,8 @@ class SessionsController < ApplicationController
 
     private
 
-    def user_params
-        params.require(:user).permit(:user_name, :password)
-    end
+        def user_params
+            params.require(:user).permit(:user_name, :password)
+        end
     
 end
