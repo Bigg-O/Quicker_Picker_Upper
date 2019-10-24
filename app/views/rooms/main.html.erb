@@ -1,9 +1,24 @@
+
+
+
+
+<div classes="container" style="margin-top: 100px; text-align: center; font-family: serif;">
 <h1>Main Menu</h1>
+</br>
+</br>
+<div class="container" style="max-width: 900px;">
+<div class="row" style="text-align: center;">
 
-<%= form_with(url: "/newgame", method: "post" ) do %>
-    <%= submit_tag("Play Game") %>
-<% end %>
 
-<%= form_with(url: statistics_url(current_user), method: "get" ) do %>
-    <%= submit_tag("Show Stats") %>
-<% end %>
+<%= link_to "View Stats", statistics_path(current_user), class: "btn btn-secondary btn-lg", style: "margin-right: 50px; margin-left: 300px" %>
+    </br></br>
+    <%= form_with(url: "/newgame", method: "post" ) do %>
+        <%= submit_tag("Play Game", class: "btn btn-secondary btn-lg") %>
+    <% end %>
+
+   </row>
+    
+
+</div>
+</div>
+ 
