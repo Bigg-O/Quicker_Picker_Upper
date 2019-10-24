@@ -5,13 +5,14 @@
         </div>
     </div>
     <div class="row" style="text-align: center">
-        <div class="col-sm-6"
-            <%= form_with(url: "/main", method: "get" ) do %>
-                <%= submit_tag("Main Menu") %>
-            <% end %>
+        <div class="col-sm-6">
+                
+        <%= link_to "Main Menu", main_path, class: "btn btn-secondary btn-lg" %>
         </div>
         <div class="col-sm-6">
-            <%= render "/sessions/logout" %>
+            <%= form_with(url: "/logout", method: "post" ) do %>
+                <%= submit_tag("logout", class:"btn btn-secondary btn-lg") %>
+            <% end %>
         </div>
     </div>
     <div style="margin: 0 auto">
