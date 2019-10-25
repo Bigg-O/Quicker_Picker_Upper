@@ -71,8 +71,8 @@ class RoomsController < ApplicationController
         def gameOver?
             elapsed = (Time.now - @@playTime).to_i
             if Room.gameover?
-                $gamestat = Gamestat.create(messes_cleaned: $current_messes_cleaned, user_id: current_user.id, elapsed_time: elapsed)
-                $gamestat.save
+                @gamestat = Gamestat.create(messes_cleaned: $current_messes_cleaned, user_id: current_user.id, elapsed_time: elapsed)
+                @gamestat.save
 
                 redirect_to gameover_path and return
 
