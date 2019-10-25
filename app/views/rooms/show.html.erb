@@ -27,29 +27,31 @@
 </div>
 
 
-<div class="container" style="max-width: 300px;">
+<div class="container" style="max-width: 900px;">
     <br /><br /><br /><br /><br />
     <div classes="container" style="text-align: center; font-family: serif; z-index: 2">
         <h1><%= @room.name %></h1>
         </br>
         </br>
-
         <h3>Messes</h3>
+        </div>
+
+        <div class="container" style="max-width: 350px;">
         <% @room.messes.each do |mess| %>
             <% if mess.name == "Toy Spill" %>
-                <%= image_tag "/assets/toy.png", :size => '260x260' %>
+                <%= image_tag "/assets/toy.png", :size => '150x150' %>
             <% elsif mess.name == "Drawing on the Wall" %>
-                <%= image_tag "/assets/drawn.jpg", :size => '260x260' %>
+                <%= image_tag "/assets/drawn.jpg", :size => '150x150' %>
             <% elsif mess.name == "Snack Spill" %>
-                <%= image_tag "/assets/snack.png", :size => '260x260' %>
+                <%= image_tag "/assets/snack.png", :size => '150x150' %>
             <% elsif mess.name == "Juice Spill" %>
-                <%= image_tag "/assets/juice.png", :size => '260x260' %>
+                <%= image_tag "/assets/juice.png", :size => '150x150' %>
             <% end %>
             <% if Room.inventory.tools.first == mess.tool%>
                 <%= button_to 'Clean', clean_button_path(:id => @room.id, :mess => mess.id), method: :post, class: "btn btn-secondary btn-md text-center" %>
             <% end %>
         <% end %>
-
+        <div classes="container" style="text-align: center; font-family: serif; z-index: 2">
         <h3>Tools in the room</h3> 
             <% @room.tools.each do |tool| %>
                 <p>- <%= tool.name %></p>
@@ -57,6 +59,7 @@
                 </br>
             <% end %>
         </br>
-        <p><%= link_to "Back to the House", "/rooms" %></p>
+        <p><%= link_to "Back to the House", "/rooms", class: "btn btn-primary btn-sm text-center" %></p>
+        </div>
     </div>
 </div>

@@ -9,11 +9,7 @@
 <div class="card" style="width: 10rem; text-align: center; float: left; height: 120px;">
 <div class="card-body">
 <h5 class="card-title">Number of Kids</h5>
-<% @rooms.each do |room| %>
-  <% $kids = 0 %>
-  <% $kids += room.num_of_kids %>
-  <%end%>
-  <%= $kids %>
+  <%= Room.kids %>
 </div>
 </div>
 
@@ -32,9 +28,9 @@
 
 
 <div classes="container" style="text-align: center; font-family: serif;">
-
+  <div classes="container" style="margin-right: 330px;">
   <h1>House View</h1>
-  
+  </div>
   <div class="container" style="max-width: 900px; margin-top: 100px;">
     <%= link_to (image_tag "/assets/livingroom.png", :size => '260x200'), @rooms.first %>
     <%= link_to (image_tag "/assets/Diningroom.png", :size => '260x200'), @rooms.fifth %>

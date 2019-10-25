@@ -134,6 +134,16 @@ class Room < ApplicationRecord
         return true
     end
 
+
+    def self.kids
+        kids = 0
+        @rooms = Room.all
+        @rooms.each do |room| 
+            kids += room.num_of_kids
+        end
+        kids
+    end
+
    
     
 end
