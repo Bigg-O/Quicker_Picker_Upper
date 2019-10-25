@@ -18,7 +18,7 @@ These warning will appear when messes have been made in a particular room
 
 **Using the proper tool you can clean up the messes.**
 - Cloth will clean Drawn on the wall
-- Mop will clean Juice spill
+- Sponge will clean Juice spill
 - Basket will clean Toy spill
 - Vaccuum will clean Snack spill
 
