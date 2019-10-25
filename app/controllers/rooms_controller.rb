@@ -66,8 +66,11 @@ class RoomsController < ApplicationController
             elapsed = (Time.now - @@playTime).to_i
             if Room.gameover?
                 Gamestat.create(messes_cleaned: $current_messes_cleaned, user_id: current_user.id, elapsed_time: elapsed)
-                redirect_to gameover_path
+
+                redirect_to gameover_path and return
+
                 return
+
             end
         end
 
@@ -81,7 +84,7 @@ class RoomsController < ApplicationController
                 (current_step - @@timeStep).times do
                     Room.addKids
                     if !Room.add_messes
-                        redirect_to gameover_path
+                        redirect_to gameover_path and return
                         break
                     end
                 end

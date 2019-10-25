@@ -3,11 +3,27 @@
   <head>
     <title>Quicker Picker Upper</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
  
   </head>
 
   <body>
+  <ul class="nav justify-content-end">
+    <li class="nav-item">
+      <% if current_user %>
+      <%= link_to current_user.user_name, main_path, class:"nav-link disabled" %>
+      <% end %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Main Menu", main_path,  class:"nav-link"  %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Logout", logout_path, method: :post, class:"nav-link" %>
+    </li>
+    
+  </ul>
     <%= yield %>
   </body>
 </html>
