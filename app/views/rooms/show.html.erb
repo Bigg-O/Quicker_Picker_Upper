@@ -1,12 +1,3 @@
-<<<<<<< Updated upstream
-<h1><%= @room.name %></h1>
-</br>
-</br>
-number of kids <%= @room.num_of_kids if @room.num_of_kids %>
-<h3>Messes</h3>
-<% @room.messes.each do |mess| %>
-    <p>-<%= mess.name %>
-=======
 <div class="card" style="width: 10rem; text-align: center; float: left; height: 120px;">
     <div class="card-body">
         <h5 class="card-title">Time</h5>
@@ -56,7 +47,6 @@ number of kids <%= @room.num_of_kids if @room.num_of_kids %>
     <% elsif mess.name == "Juice Spill" %>
         <%= image_tag "/assets/juice.png", :size => '260x260' %>
     <% end %>
->>>>>>> Stashed changes
     <% if Room.inventory.tools.first == mess.tool%>
         <%= button_to 'Clean', clean_button_path(:id => @room.id, :mess => mess.id), method: :post %>
     <%end%>
