@@ -26,4 +26,5 @@ Over time number of kids will increase.
 More kids means more messes!
 
 *When a room has all four of the messes the game will be over!*
-You better clench up and cleans things up as fast as you can before too many kids storm
+
+You better clench up and clean things up as fast as you can before too many kids storm
