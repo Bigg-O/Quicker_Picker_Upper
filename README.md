@@ -13,4 +13,4 @@ These warning will appear when messes have been made in a particular room
 .<img src="app/assets/images/drawn.jpg" width="180">
 <img src="app/assets/images/juice.png" width="180">
 <img src="app/assets/images/toy.png" width="180">
-<img src="app/assets/images/snack.png" width="180">
+<img src="app/assets/images/snack.png" width="180">.
