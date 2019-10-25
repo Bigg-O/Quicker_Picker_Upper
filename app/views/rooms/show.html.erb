@@ -26,7 +26,6 @@
     <%end%></p>
   </div>
 </div>
-</div>
 
 
 <div class="container" style="max-width: 300px;">
@@ -40,17 +39,13 @@
 <h3>Messes</h3>
 <% @room.messes.each do |mess| %>
     <% if mess.name == "Toy Spill" %>
-        <%= mess.name %>
-        <%= image_tag "/assets/toy.png" %>
+        <%= image_tag "/assets/toy.png", :size => '260x260' %>
     <% elsif mess.name == "Drawing on the Wall" %>
-        <%= mess.name %>
-        <%= image_tag "/assets/drawn.jpg" %>
+        <%= image_tag "/assets/drawn.jpg", :size => '260x260' %>
     <% elsif mess.name == "Snack Spill" %>
-        <%= mess.name %>
-        <%= image_tag "/assets/snack.png" %>
+        <%= image_tag "/assets/snack.png", :size => '260x260' %>
     <% elsif mess.name == "Juice Spill" %>
-        <%= mess.name %>
-        <%= image_tag "/assets/juice.png" %>
+        <%= image_tag "/assets/juice.png", :size => '260x260' %>
     <% end %>
     <% if Room.inventory.tools.first == mess.tool%>
 
