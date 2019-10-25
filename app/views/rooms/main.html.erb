@@ -1,26 +1,20 @@
-
-
 <div class="container" style="max-width: 600px; margin-top: 100px; text-align: center; font-family: serif;">
-<h1>Quicker Picker Upper</h1>
+    <h1>Quicker Picker Upper</h1>
 </div>
 
 <div classes="container" style="margin-top: 100px; text-align: center; font-family: serif;">
-<h2>Main Menu</h2>
-</br>
-</br>
-<div class="container" style="max-width: 900px;">
-<div class="row" style="text-align: center;">
-
-
-<%= link_to "View Stats", statistics_path(current_user), class: "btn btn-secondary btn-lg", style: "margin-right: 50px; margin-left: 300px" %>
-    </br></br>
-    <%= form_with(url: "/newgame", method: "post" ) do %>
-        <%= submit_tag("Play Game", class: "btn btn-secondary btn-lg") %>
-    <% end %>
-
-   </row>
-    
-
-</div>
+    <h2>Main Menu</h2>
+    </br>
+    </br>
+    <div class="container" style="max-width: 900px;">
+        <div class="row" style="text-align: center;">
+            <%= link_to "View Stats", statistics_path(current_user), class: "btn btn-secondary btn-lg", style: "margin-right: 50px; margin-left: 300px" %>
+            </br></br>
+            <%= form_with(url: "/newgame", method: "post" ) do %>
+                <%= submit_tag("Play Game", class: "btn btn-secondary btn-lg") %>
+            <% end %>
+            </row>
+        </div>
+    </div>
 </div>
  

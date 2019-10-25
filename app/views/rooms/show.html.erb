@@ -1,67 +1,62 @@
 <div class="card" style="width: 10rem; text-align: center; float: left; height: 120px;">
-<div class="card-body">
-<h5 class="card-title">Time</h5>
-<p><%= (Time.now - @playTime).to_i %> seconds.</p>
+    <div class="card-body">
+        <h5 class="card-title">Time </h5>
+        <p><%= (Time.now - @playTime).to_i %> seconds.</p>
+    </div>
 </div>
-</div>
-
 
 <div class="card" style="width: 10rem; text-align: center; float: left; height: 120px;">
-<div class="card-body">
-<h5 class="card-title">Number of Kids</h5>
-<%= @room.num_of_kids if @room.num_of_kids %>
+    <div class="card-body">
+        <h5 class="card-title">Number of Kids</h5>
+        <%= @room.num_of_kids if @room.num_of_kids %>
+    </div>
 </div>
-</div>
-
 
 <div class="card" style="width: 10rem; text-align: center; margin-left: 5px; float: right;">
-  <div class="card-body">
-    <h5 class="card-title">Inventory</h5>
-    <p>-
-    <% if !Room.inventory.tools.empty? %>
-        <%= Room.inventory.tools.first.name %>
-        <%= button_to 'Drop', drop_button_path(:id => @room.id), method: :post, class: "btn btn-secondary btn-md text-center"%></br>
-    <% else %>
-        <%= "Empty" %></p>
-    <%end%></p>
-  </div>
+    <div class="card-body">
+        <h5 class="card-title">Inventory</h5>
+        <p>-
+            <% if !Room.inventory.tools.empty? %>
+                <%= Room.inventory.tools.first.name %>
+                <%= button_to 'Drop', drop_button_path(:id => @room.id), method: :post, class: "btn btn-secondary btn-md text-center"%></br>
+            <% else %>
+                <%= "Empty" %></p>
+            <%end%>
+        </p>
+    </div>
 </div>
 
 
 <div class="container" style="max-width: 300px;">
- <br /><br /><br /><br /><br />
-<div classes="container" style="text-align: center; font-family: serif; z-index: 2">
+    <br /><br /><br /><br /><br />
+    <div classes="container" style="text-align: center; font-family: serif; z-index: 2">
         <h1><%= @room.name %></h1>
         </br>
         </br>
 
+        <h3>Messes</h3>
+        <% @room.messes.each do |mess| %>
+            <% if mess.name == "Toy Spill" %>
+                <%= image_tag "/assets/toy.png", :size => '260x260' %>
+            <% elsif mess.name == "Drawing on the Wall" %>
+                <%= image_tag "/assets/drawn.jpg", :size => '260x260' %>
+            <% elsif mess.name == "Snack Spill" %>
+                <%= image_tag "/assets/snack.png", :size => '260x260' %>
+            <% elsif mess.name == "Juice Spill" %>
+                <%= image_tag "/assets/juice.png", :size => '260x260' %>
+            <% end %>
+            <% if Room.inventory.tools.first == mess.tool%>
+                <%= button_to 'Clean', clean_button_path(:id => @room.id, :mess => mess.id), method: :post, class: "btn btn-secondary btn-md text-center" %>
+            <% end %>
+        <% end %>
 
-<h3>Messes</h3>
-<% @room.messes.each do |mess| %>
-    <% if mess.name == "Toy Spill" %>
-        <%= image_tag "/assets/toy.png", :size => '260x260' %>
-    <% elsif mess.name == "Drawing on the Wall" %>
-        <%= image_tag "/assets/drawn.jpg", :size => '260x260' %>
-    <% elsif mess.name == "Snack Spill" %>
-        <%= image_tag "/assets/snack.png", :size => '260x260' %>
-    <% elsif mess.name == "Juice Spill" %>
-        <%= image_tag "/assets/juice.png", :size => '260x260' %>
-    <% end %>
-    <% if Room.inventory.tools.first == mess.tool%>
-
-        <%= button_to 'Clean', clean_button_path(:id => @room.id, :mess => mess.id), method: :post, class: "btn btn-secondary btn-md text-center" %>
-    <%end%>
-<%end%>
-</br>
-</br>
-
-<h3>Tools in the room</h3> 
-    <% @room.tools.each do |tool| %>
-        <p>- <%= tool.name %></p>
-        <%= button_to 'Pick Up', pick_up_button_path(:id => @room.id, :tool_picked => tool.id), method: :post, class: "btn btn-secondary btn-md text-center" %></br>
-    <% end %>
-</br>
-
-
+        <h3>Tools in the room</h3> 
+            <% @room.tools.each do |tool| %>
+                <p>- <%= tool.name %></p>
+                <%= button_to 'Pick Up', pick_up_button_path(:id => @room.id, :tool_picked => tool.id), method: :post, class: "btn btn-secondary btn-md text-center" %>
+                </br>
+            <% end %>
+        </br>
+        <p><%= link_to "Back to the House", "/rooms" %></p>
+    </div>
 </div>
-<p><%= link_to "Back to the House", "/rooms" %></p>
