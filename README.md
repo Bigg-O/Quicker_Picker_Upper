@@ -16,7 +16,7 @@ These warning will appear when messes have been made in a particular room
 <img src="app/assets/images/toy.png" width="180">
 <img src="app/assets/images/snack.png" width="180">.
 
-**Using the proper tool you can clean up the mess.**
+**Using the proper tool you can clean up the messes.**
 - Cloth will clean Drawn on the wall
 - Mop will clean Juice spill
 - Basket will clean Toy spill
