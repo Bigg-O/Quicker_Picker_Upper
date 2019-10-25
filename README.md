@@ -9,4 +9,4 @@ There are total of four types of messes
 - Snack spill
 
 These warning will appear when messes have been made in a particular room
-![](app/assets/images/drawn.jpg)
+<img src="app/assets/images/drawn.jpg" width="200">
