@@ -2,10 +2,10 @@ class RoomsController < ApplicationController
     
     @@timeStep = 0
     @@playTime = nil
-    $current_messes_cleaned = 0
-
+    
     
     def newgame
+        $current_messes_cleaned = 0
         @@timeStep = 0
         Room.remove_kids
         Roominfo.destroy_all
@@ -15,6 +15,7 @@ class RoomsController < ApplicationController
     
     def gameover
         @gamestat = current_user.gamestats.last
+    
     end
     
     def index
@@ -30,7 +31,7 @@ class RoomsController < ApplicationController
     end
     
     def show
-        
+        gameOver?
         update
         @playTime = @@playTime
         @room = Room.find(params[:id])
@@ -70,8 +71,8 @@ class RoomsController < ApplicationController
         def gameOver?
             elapsed = (Time.now - @@playTime).to_i
             if Room.gameover?
-                @gamestat = Gamestat.create(messes_cleaned: $current_messes_cleaned, user_id: current_user.id, elapsed_time: elapsed)
-                @gamestat.save
+                $gamestat = Gamestat.create(messes_cleaned: $current_messes_cleaned, user_id: current_user.id, elapsed_time: elapsed)
+                $gamestat.save
 
                 redirect_to gameover_path and return
 
