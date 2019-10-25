@@ -1,13 +1,43 @@
-<h1> Game Over!!</h1>
-<h2> The children have overcome your ability to clean up after them!!! <h2>
-<h3> Here are your stats:  </h3>
-<ul>
-<li> messes cleaned:<%= @gamestat.messes_cleaned %> </li>
-<li> total time:<%= @gamestat.elapsed_time %>  </li>
-</ul>
-<%= form_with(url: "/newgame", method: "post" ) do %>
-    <%= submit_tag("Try Again") %>
-<% end %>
+
+    
+    
+    
+    
+    
+    <div class="container" style="max-width: 800px; margin-top: 100px;">
+    
+    <div classes="container" style="text-align: center; font-family: serif;">
 
 
-<%= link_to "Statistics", statistics_path(current_user) %>
+
+
+
+    <div class="jumbotron">
+    <h1 class="display-4">Game Over!!!</h1>
+    <p class="lead">The children have overcome your ability to clean up after them!!!</p>
+    <hr class="my-4">
+    <p><li> messes cleaned:<%= @gamestat.messes_cleaned %> </li>
+    <li> total time:<%= @gamestat.elapsed_time %>  </li>
+    </ul>
+    </p>
+    <p class="lead">
+    <%= form_with(url: "/newgame", method: "post") do %>
+        <%= submit_tag("Try Again", class: "btn btn-secondary btn md") %>
+        <%end%>
+    </p>
+    <%= link_to "Statistics", statistics_path(current_user) %>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
