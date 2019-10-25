@@ -2,6 +2,7 @@
 Quicker Picker Upper is a game that the player is in charge of taking care of the daycare.
 
 There will be kids storming over time and your mission is to clean up their messes.
+
 **There are total of four types of messes**
 - Drawn on the wall
 - Juice spill
