@@ -10,10 +10,10 @@
 <div class="card-body">
 <h5 class="card-title">Number of Kids</h5>
 <% @rooms.each do |room| %>
-  <% @kids = 0%>
-  <% @kids += room.num_of_kids %>
+  <% $kids = 0 %>
+  <% $kids += room.num_of_kids %>
   <%end%>
-  <%= @kids %>
+  <%= $kids %>
 </div>
 </div>
 
