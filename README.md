@@ -37,5 +37,5 @@ You better clench up and clean things up as fast as you can before too many kids
 ## Author
 
 * **Wookeun Song** - *Initial work* - [Bigg-O](https://github.com/Bigg-O)
-* **Joelle Helm** - *Initial work* - [Bigg-O](https://github.com/Joellehelm)
-* **Steven Decker** - *Initial work* - [Bigg-O](https://github.com/swdecker)
+* **Joelle Helm** - *Initial work* - [Joellehelm](https://github.com/Joellehelm)
+* **Steven Decker** - *Initial work* - [swdecker](https://github.com/swdecker)
